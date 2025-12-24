@@ -1,14 +1,12 @@
 #ifndef REGISTERDEVICEWINDOW_H
 #define REGISTERDEVICEWINDOW_H
-
 #include <QMainWindow>
 
 namespace Ui {
 class RegisterDeviceWindow;
 }
 
-class RegisterDeviceWindow : public QMainWindow
-{
+class RegisterDeviceWindow : public QMainWindow {
     Q_OBJECT
 
 public:
@@ -20,6 +18,7 @@ public slots:
     void on_deletePushButton_clicked();
     void on_registPushButton_clicked();
     void routerListTable();
+
 private:
     Ui::RegisterDeviceWindow *ui;
 

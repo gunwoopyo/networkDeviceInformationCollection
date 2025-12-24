@@ -1,15 +1,10 @@
 #include "RouterWorker.h"
 
-#include <QDebug>
-
 void RouterWorker::routerProcess() {
-
-    Router* routerAddress = Router::routerPtr;
-    routerAddress->createPort();  //port, portName, ifIndex
-    emit ready();
-
-    routerAddress->fetchRouterInfo(); //routerName, cpu, time, memory
-    emit routerProgress(routerAddress);
+    Router::routerPtr->createPort(); //port, portName, ifIndex
+    emit portThreadStart();
+    Router::routerPtr->fetchRouterInfo(); // routerName, cpu, memory, time
+    emit routerProgress(Router::routerPtr);
     emit finished();
 }
 

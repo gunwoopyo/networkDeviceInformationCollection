@@ -39,17 +39,17 @@ public:
     {
         if (RoutingTableWindow->objectName().isEmpty())
             RoutingTableWindow->setObjectName("RoutingTableWindow");
-        RoutingTableWindow->resize(873, 484);
+        RoutingTableWindow->resize(823, 418);
         centralwidget = new QWidget(RoutingTableWindow);
         centralwidget->setObjectName("centralwidget");
         titleFrame = new QFrame(centralwidget);
         titleFrame->setObjectName("titleFrame");
-        titleFrame->setGeometry(QRect(60, 50, 761, 61));
+        titleFrame->setGeometry(QRect(30, 30, 761, 51));
         titleFrame->setFrameShape(QFrame::Shape::StyledPanel);
         titleFrame->setFrameShadow(QFrame::Shadow::Raised);
         titleText = new QLabel(titleFrame);
         titleText->setObjectName("titleText");
-        titleText->setGeometry(QRect(10, -10, 331, 51));
+        titleText->setGeometry(QRect(10, -20, 331, 71));
         QFont font;
         font.setFamilies({QString::fromUtf8("Cantarell Extra Bold")});
         font.setPointSize(15);
@@ -58,7 +58,7 @@ public:
         titleText->setStyleSheet(QString::fromUtf8("color:rgb(94, 92, 100);"));
         subtitleText = new QLabel(titleFrame);
         subtitleText->setObjectName("subtitleText");
-        subtitleText->setGeometry(QRect(10, 10, 151, 61));
+        subtitleText->setGeometry(QRect(10, 10, 151, 51));
         QFont font1;
         font1.setFamilies({QString::fromUtf8("Cantarell")});
         font1.setPointSize(14);
@@ -68,7 +68,7 @@ public:
 ""));
         interfaceFrame = new QFrame(centralwidget);
         interfaceFrame->setObjectName("interfaceFrame");
-        interfaceFrame->setGeometry(QRect(60, 130, 761, 251));
+        interfaceFrame->setGeometry(QRect(30, 100, 761, 251));
         QFont font2;
         font2.setFamilies({QString::fromUtf8("Cantarell")});
         font2.setPointSize(9);
@@ -121,7 +121,7 @@ public:
         RoutingTableWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(RoutingTableWindow);
         menubar->setObjectName("menubar");
-        menubar->setGeometry(QRect(0, 0, 873, 23));
+        menubar->setGeometry(QRect(0, 0, 823, 23));
         RoutingTableWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(RoutingTableWindow);
         statusbar->setObjectName("statusbar");
@@ -143,9 +143,9 @@ public:
         QTableWidgetItem *___qtablewidgetitem1 = routingTable->horizontalHeaderItem(1);
         ___qtablewidgetitem1->setText(QCoreApplication::translate("RoutingTableWindow", "\354\204\234\353\270\214\353\204\267 \353\247\210\354\212\244\355\201\254", nullptr));
         QTableWidgetItem *___qtablewidgetitem2 = routingTable->horizontalHeaderItem(2);
-        ___qtablewidgetitem2->setText(QCoreApplication::translate("RoutingTableWindow", " \355\217\254\355\212\270 \353\262\210\355\230\270", nullptr));
+        ___qtablewidgetitem2->setText(QCoreApplication::translate("RoutingTableWindow", "\355\217\254\355\212\270 \353\262\210\355\230\270", nullptr));
         QTableWidgetItem *___qtablewidgetitem3 = routingTable->horizontalHeaderItem(3);
-        ___qtablewidgetitem3->setText(QCoreApplication::translate("RoutingTableWindow", "\353\213\244\354\235\214 \355\231\211", nullptr));
+        ___qtablewidgetitem3->setText(QCoreApplication::translate("RoutingTableWindow", "\353\213\244\354\235\214 \355\231\211 IP \354\243\274\354\206\214", nullptr));
     } // retranslateUi
 
 };

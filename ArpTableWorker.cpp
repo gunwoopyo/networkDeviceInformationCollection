@@ -1,3 +1,4 @@
+#include <QDebug>
 #include "ArpTable.h"
 #include "ArpTableWorker.h"
 
@@ -5,7 +6,6 @@
 class ArpTable;
 
 void ArpTableWorker::arpTableProcess() {
-
     ArpTable* arpTable = new ArpTable();
     arpTable->fetchArpTableInfo();
 

@@ -1,26 +1,31 @@
-#include <net-snmp/net-snmp-config.h>
-#include <net-snmp/net-snmp-includes.h>
 #include "RouteTable.h"
 #include "RouterWorker.h"
 
 void RouteTable::fetchRouteTableInfo() {
-    snmp_session session;
-    snmp_sess_init(&session);
-    session.peername = strdup(Router::routerPtr->routerIP.toStdString().c_str());
-    session.version = SNMP_VERSION_2c;
-    session.community = (u_char*)strdup(Router::routerPtr->routerCommunity.toStdString().c_str());
-    session.community_len = Router::routerPtr->routerCommunity.length();
+    Router* router = Router::routerPtr;
+    snmp_session *ss = Router::openSnmpSession(router->routerIP, router->routerCommunity);
 
-    snmp_session *ss = snmp_open(&session);
+    if(!Router::snmpSessionValid(ss))
+        return;
 
-    // 포트 번호
+    oid destOID [] = {1,3,6,1,2,1,4,21,1,1};
+    size_t destOIDLength = OID_LENGTH(destOID);
+    oid currentDestOID[MAX_OID_LEN];
+    size_t currentDestOIDLength = destOIDLength;
+    memcpy(currentDestOID, destOID, destOIDLength * sizeof(oid));
+
     oid ifIndexOID [] = {1,3,6,1,2,1,4,21,1,2};
     size_t ifIndexOIDLength = OID_LENGTH(ifIndexOID);
     oid currentIfIndexOID[MAX_OID_LEN];
     size_t currentIfIndexOIDLength = ifIndexOIDLength;
     memcpy(currentIfIndexOID, ifIndexOID, ifIndexOIDLength * sizeof(oid));
 
-    // 서브넷
+    oid nextHopOID [] = {1,3,6,1,2,1,4,21,1,7};
+    size_t nextHopOIDLength = OID_LENGTH(nextHopOID);
+    oid currentNextHopOID[MAX_OID_LEN];
+    size_t currentNextHopOIDLength = nextHopOIDLength;
+    memcpy(currentNextHopOID, nextHopOID, nextHopOIDLength * sizeof(oid));
+
     oid subnetOID [] = {1,3,6,1,2,1,4,21,1,11};
     size_t subnetOIDLength = OID_LENGTH(subnetOID);
     oid currentSubnetOID[MAX_OID_LEN];
@@ -28,19 +33,7 @@ void RouteTable::fetchRouteTableInfo() {
     memcpy(currentSubnetOID, subnetOID, subnetOIDLength * sizeof(oid));
 
 
-    // 목적지 주소 1.3.6.1.2.1.4.21.1.1
-    oid destOID [] = {1,3,6,1,2,1,4,21,1,1};
-    size_t destOIDLength = OID_LENGTH(destOID);
-    oid currentDestOID[MAX_OID_LEN];
-    size_t currentDestOIDLength = destOIDLength;
-    memcpy(currentDestOID, destOID, destOIDLength * sizeof(oid));
 
-    // 다음 홉 1.3.6.1.2.1.4.21.1.7
-    oid nextHopOID [] = {1,3,6,1,2,1,4,21,1,7};
-    size_t nextHopOIDLength = OID_LENGTH(nextHopOID);
-    oid currentNextHopOID[MAX_OID_LEN];
-    size_t currentNextHopOIDLength = nextHopOIDLength;
-    memcpy(currentNextHopOID, nextHopOID, nextHopOIDLength * sizeof(oid));
 
     while(true) {
         netsnmp_pdu* ifIndexPDU = snmp_pdu_create(SNMP_MSG_GETNEXT);
@@ -69,32 +62,17 @@ void RouteTable::fetchRouteTableInfo() {
         snmp_synch_response(ss, nextHopPDU, &nextHopResponse);
 
 
-        RouteTableEntry routeTableEntry;
-        routeTableEntry.inIndex = *(ifIndexResponse->variables->val.integer);
-        routeTableEntry.subnetMask = QString("%1.%2.%3.%4")
-                                         .arg(subnetResponse->variables->val.string[subnetResponse->variables->val_len - 4])
-                                         .arg(subnetResponse->variables->val.string[subnetResponse->variables->val_len - 3])
-                                         .arg(subnetResponse->variables->val.string[subnetResponse->variables->val_len - 2])
-                                         .arg(subnetResponse->variables->val.string[subnetResponse->variables->val_len - 1]);
+        RouteTableEntry entry;
+        entry.ifIndex = *(ifIndexResponse->variables->val.integer);
+        entry.subnetMask = Router::snmpIpToVal(subnetResponse->variables);
+        entry.destIPAddress = Router::snmpIpToVal(destResponse->variables);
+        entry.nextHop = Router::snmpIpToVal(nextHopResponse->variables);
 
-        routeTableEntry.destIPAddress = QString("%1.%2.%3.%4")
-                                            .arg(destResponse->variables->val.string[destResponse->variables->val_len - 4])
-                                            .arg(destResponse->variables->val.string[destResponse->variables->val_len - 3])
-                                            .arg(destResponse->variables->val.string[destResponse->variables->val_len - 2])
-                                            .arg(destResponse->variables->val.string[destResponse->variables->val_len - 1]);
-
-        routeTableEntry.nextHop = QString("%1.%2.%3.%4")
-                                      .arg(nextHopResponse->variables->val.string[nextHopResponse->variables->val_len - 4])
-                                      .arg(nextHopResponse->variables->val.string[nextHopResponse->variables->val_len - 3])
-                                      .arg(nextHopResponse->variables->val.string[nextHopResponse->variables->val_len - 2])
-                                      .arg(nextHopResponse->variables->val.string[nextHopResponse->variables->val_len - 1]);
-
-        routeTable.append(routeTableEntry);
+        routeTable.append(entry);
 
 
         memcpy(currentIfIndexOID, ifIndexResponse->variables->name, sizeof(oid)*ifIndexResponse->variables->name_length);
         currentIfIndexOIDLength = ifIndexResponse->variables->name_length;
-
 
         memcpy(currentSubnetOID, subnetResponse->variables->name, sizeof(oid)*subnetResponse->variables->name_length);
         currentSubnetOIDLength = subnetResponse->variables->name_length;
@@ -104,15 +82,9 @@ void RouteTable::fetchRouteTableInfo() {
 
         memcpy(currentNextHopOID, nextHopResponse->variables->name, sizeof(oid)*nextHopResponse->variables->name_length);
         currentNextHopOIDLength = nextHopResponse->variables->name_length;
-
-
-
-        snmp_free_pdu(ifIndexResponse);
     }
 
     snmp_close(ss);
     SOCK_CLEANUP;
-
-
 
 }

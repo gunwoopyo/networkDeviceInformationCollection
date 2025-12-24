@@ -123,7 +123,7 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName("MainWindow");
-        MainWindow->resize(1368, 789);
+        MainWindow->resize(1368, 769);
         QFont font;
         font.setFamilies({QString::fromUtf8("Cantarell Extra Bold")});
         MainWindow->setFont(font);
@@ -210,7 +210,7 @@ public:
         interfaceTable->verticalHeader()->setHighlightSections(true);
         portFrame = new QFrame(centralwidget);
         portFrame->setObjectName("portFrame");
-        portFrame->setGeometry(QRect(290, 140, 1051, 181));
+        portFrame->setGeometry(QRect(280, 140, 1061, 181));
         portFrame->setFrameShape(QFrame::Shape::StyledPanel);
         portFrame->setFrameShadow(QFrame::Shadow::Raised);
         portViewText = new QLabel(portFrame);
@@ -220,7 +220,7 @@ public:
         portViewText->setStyleSheet(QString::fromUtf8("color:rgb(94, 92, 100);"));
         portViewFrame = new QFrame(portFrame);
         portViewFrame->setObjectName("portViewFrame");
-        portViewFrame->setGeometry(QRect(0, 20, 1051, 161));
+        portViewFrame->setGeometry(QRect(0, 20, 1061, 161));
         portViewFrame->setStyleSheet(QString::fromUtf8(""));
         portViewFrame->setFrameShape(QFrame::Shape::StyledPanel);
         portViewFrame->setFrameShadow(QFrame::Shadow::Raised);

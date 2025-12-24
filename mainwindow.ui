@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1368</width>
-    <height>789</height>
+    <height>769</height>
    </rect>
   </property>
   <property name="font">
@@ -215,9 +215,9 @@
    <widget class="QFrame" name="portFrame">
     <property name="geometry">
      <rect>
-      <x>290</x>
+      <x>280</x>
       <y>140</y>
-      <width>1051</width>
+      <width>1061</width>
       <height>181</height>
      </rect>
     </property>
@@ -255,7 +255,7 @@
       <rect>
        <x>0</x>
        <y>20</y>
-       <width>1051</width>
+       <width>1061</width>
        <height>161</height>
       </rect>
      </property>

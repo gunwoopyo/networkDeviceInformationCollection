@@ -2,11 +2,8 @@
 #include <net-snmp/net-snmp-includes.h>
 #include <QApplication>
 #include <QSqlDatabase>
-#include <QSqlQuery>
 #include <QSqlError>
 #include <cstdlib>
-
-
 #include "mainwindow.h"
 
 int main(int argc, char *argv[]) {
@@ -26,7 +23,6 @@ int main(int argc, char *argv[]) {
     } else {
         qDebug() << "Database connected successfully!";
     }
-
 
     init_snmp("snmpApp");
 

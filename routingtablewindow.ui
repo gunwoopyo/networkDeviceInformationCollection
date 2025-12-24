@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>873</width>
-    <height>484</height>
+    <width>823</width>
+    <height>418</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,10 +17,10 @@
    <widget class="QFrame" name="titleFrame">
     <property name="geometry">
      <rect>
-      <x>60</x>
-      <y>50</y>
+      <x>30</x>
+      <y>30</y>
       <width>761</width>
-      <height>61</height>
+      <height>51</height>
      </rect>
     </property>
     <property name="frameShape">
@@ -33,9 +33,9 @@
      <property name="geometry">
       <rect>
        <x>10</x>
-       <y>-10</y>
+       <y>-20</y>
        <width>331</width>
-       <height>51</height>
+       <height>71</height>
       </rect>
      </property>
      <property name="font">
@@ -58,7 +58,7 @@
        <x>10</x>
        <y>10</y>
        <width>151</width>
-       <height>61</height>
+       <height>51</height>
       </rect>
      </property>
      <property name="font">
@@ -80,8 +80,8 @@
    <widget class="QFrame" name="interfaceFrame">
     <property name="geometry">
      <rect>
-      <x>60</x>
-      <y>130</y>
+      <x>30</x>
+      <y>100</y>
       <width>761</width>
       <height>251</height>
      </rect>
@@ -189,7 +189,7 @@
      </column>
      <column>
       <property name="text">
-       <string> 포트 번호</string>
+       <string>포트 번호</string>
       </property>
       <property name="font">
        <font>
@@ -199,7 +199,7 @@
      </column>
      <column>
       <property name="text">
-       <string>다음 홉</string>
+       <string>다음 홉 IP 주소</string>
       </property>
       <property name="font">
        <font>
@@ -215,7 +215,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>873</width>
+     <width>823</width>
      <height>23</height>
     </rect>
    </property>

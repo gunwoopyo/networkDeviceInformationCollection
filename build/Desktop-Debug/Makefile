@@ -1462,6 +1462,16 @@ moc_arptablewindow.cpp: ../../arptablewindow.h \
 		../../../Qt/6.10.0/gcc_64/include/QtGui/qguiapplication_platform.h \
 		../../../Qt/6.10.0/gcc_64/include/QtWidgets/qtabwidget.h \
 		../../../Qt/6.10.0/gcc_64/include/QtCore/QThread \
+		../../../Qt/6.10.0/gcc_64/include/QtSql/QSqlDatabase \
+		../../../Qt/6.10.0/gcc_64/include/QtSql/qsqldatabase.h \
+		../../../Qt/6.10.0/gcc_64/include/QtSql/qtsqlglobal.h \
+		../../../Qt/6.10.0/gcc_64/include/QtSql/qtsql-config.h \
+		../../../Qt/6.10.0/gcc_64/include/QtSql/qtsqlexports.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qmetaobject.h \
+		../../../Qt/6.10.0/gcc_64/include/QtSql/QSqlQuery \
+		../../../Qt/6.10.0/gcc_64/include/QtSql/qsqlquery.h \
+		../../../Qt/6.10.0/gcc_64/include/QtSql/QSqlError \
+		../../../Qt/6.10.0/gcc_64/include/QtSql/qsqlerror.h \
 		moc_predefs.h \
 		../../../Qt/6.10.0/gcc_64/libexec/moc
 	/home/gunwoopyo/Qt/6.10.0/gcc_64/libexec/moc $(DEFINES) --include /home/gunwoopyo/networkDeviceInformationCollection/build/Desktop-Debug/moc_predefs.h -I/home/gunwoopyo/Qt/6.10.0/gcc_64/mkspecs/linux-g++ -I/home/gunwoopyo/networkDeviceInformationCollection -I/usr/include/net-snmp -I/home/gunwoopyo/Qt/6.10.0/gcc_64/include -I/home/gunwoopyo/Qt/6.10.0/gcc_64/include/QtWidgets -I/home/gunwoopyo/Qt/6.10.0/gcc_64/include/QtGui -I/home/gunwoopyo/Qt/6.10.0/gcc_64/include/QtSql -I/home/gunwoopyo/Qt/6.10.0/gcc_64/include/QtNetwork -I/home/gunwoopyo/Qt/6.10.0/gcc_64/include/QtCore -I. -I/usr/include/c++/11 -I/usr/include/c++/11/x86_64-redhat-linux -I/usr/include/c++/11/backward -I/usr/lib/gcc/x86_64-redhat-linux/11/include -I/usr/local/include -I/usr/include ../../arptablewindow.h -o moc_arptablewindow.cpp
@@ -1676,7 +1686,19 @@ moc_mainwindow.cpp: ../../mainwindow.h \
 		../../../Qt/6.10.0/gcc_64/include/QtCore/qtimer.h \
 		../../registerdevicewindow.h \
 		../../arptablewindow.h \
+		../../../Qt/6.10.0/gcc_64/include/QtSql/QSqlDatabase \
+		../../../Qt/6.10.0/gcc_64/include/QtSql/qsqldatabase.h \
+		../../../Qt/6.10.0/gcc_64/include/QtSql/qtsqlglobal.h \
+		../../../Qt/6.10.0/gcc_64/include/QtSql/qtsql-config.h \
+		../../../Qt/6.10.0/gcc_64/include/QtSql/qtsqlexports.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qmetaobject.h \
+		../../../Qt/6.10.0/gcc_64/include/QtSql/QSqlQuery \
+		../../../Qt/6.10.0/gcc_64/include/QtSql/qsqlquery.h \
+		../../../Qt/6.10.0/gcc_64/include/QtSql/QSqlError \
+		../../../Qt/6.10.0/gcc_64/include/QtSql/qsqlerror.h \
 		../../routingtablewindow.h \
+		../../../Qt/6.10.0/gcc_64/include/QtSql/QSqlRecord \
+		../../../Qt/6.10.0/gcc_64/include/QtSql/qsqlrecord.h \
 		moc_predefs.h \
 		../../../Qt/6.10.0/gcc_64/libexec/moc
 	/home/gunwoopyo/Qt/6.10.0/gcc_64/libexec/moc $(DEFINES) --include /home/gunwoopyo/networkDeviceInformationCollection/build/Desktop-Debug/moc_predefs.h -I/home/gunwoopyo/Qt/6.10.0/gcc_64/mkspecs/linux-g++ -I/home/gunwoopyo/networkDeviceInformationCollection -I/usr/include/net-snmp -I/home/gunwoopyo/Qt/6.10.0/gcc_64/include -I/home/gunwoopyo/Qt/6.10.0/gcc_64/include/QtWidgets -I/home/gunwoopyo/Qt/6.10.0/gcc_64/include/QtGui -I/home/gunwoopyo/Qt/6.10.0/gcc_64/include/QtSql -I/home/gunwoopyo/Qt/6.10.0/gcc_64/include/QtNetwork -I/home/gunwoopyo/Qt/6.10.0/gcc_64/include/QtCore -I. -I/usr/include/c++/11 -I/usr/include/c++/11/x86_64-redhat-linux -I/usr/include/c++/11/backward -I/usr/lib/gcc/x86_64-redhat-linux/11/include -I/usr/local/include -I/usr/include ../../mainwindow.h -o moc_mainwindow.cpp
@@ -2086,6 +2108,18 @@ moc_routingtablewindow.cpp: ../../routingtablewindow.h \
 		../../../Qt/6.10.0/gcc_64/include/QtGui/qguiapplication_platform.h \
 		../../../Qt/6.10.0/gcc_64/include/QtWidgets/qtabwidget.h \
 		../../../Qt/6.10.0/gcc_64/include/QtCore/QThread \
+		../../../Qt/6.10.0/gcc_64/include/QtSql/QSqlDatabase \
+		../../../Qt/6.10.0/gcc_64/include/QtSql/qsqldatabase.h \
+		../../../Qt/6.10.0/gcc_64/include/QtSql/qtsqlglobal.h \
+		../../../Qt/6.10.0/gcc_64/include/QtSql/qtsql-config.h \
+		../../../Qt/6.10.0/gcc_64/include/QtSql/qtsqlexports.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qmetaobject.h \
+		../../../Qt/6.10.0/gcc_64/include/QtSql/QSqlQuery \
+		../../../Qt/6.10.0/gcc_64/include/QtSql/qsqlquery.h \
+		../../../Qt/6.10.0/gcc_64/include/QtSql/QSqlError \
+		../../../Qt/6.10.0/gcc_64/include/QtSql/qsqlerror.h \
+		../../../Qt/6.10.0/gcc_64/include/QtSql/QSqlRecord \
+		../../../Qt/6.10.0/gcc_64/include/QtSql/qsqlrecord.h \
 		moc_predefs.h \
 		../../../Qt/6.10.0/gcc_64/libexec/moc
 	/home/gunwoopyo/Qt/6.10.0/gcc_64/libexec/moc $(DEFINES) --include /home/gunwoopyo/networkDeviceInformationCollection/build/Desktop-Debug/moc_predefs.h -I/home/gunwoopyo/Qt/6.10.0/gcc_64/mkspecs/linux-g++ -I/home/gunwoopyo/networkDeviceInformationCollection -I/usr/include/net-snmp -I/home/gunwoopyo/Qt/6.10.0/gcc_64/include -I/home/gunwoopyo/Qt/6.10.0/gcc_64/include/QtWidgets -I/home/gunwoopyo/Qt/6.10.0/gcc_64/include/QtGui -I/home/gunwoopyo/Qt/6.10.0/gcc_64/include/QtSql -I/home/gunwoopyo/Qt/6.10.0/gcc_64/include/QtNetwork -I/home/gunwoopyo/Qt/6.10.0/gcc_64/include/QtCore -I. -I/usr/include/c++/11 -I/usr/include/c++/11/x86_64-redhat-linux -I/usr/include/c++/11/backward -I/usr/lib/gcc/x86_64-redhat-linux/11/include -I/usr/local/include -I/usr/include ../../routingtablewindow.h -o moc_routingtablewindow.cpp
@@ -2243,35 +2277,30 @@ ArpTable.o: ../../ArpTable.cpp ../../ArpTable.h \
 		../../Traffic.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o ArpTable.o ../../ArpTable.cpp
 
-ArpTableWorker.o: ../../ArpTableWorker.cpp ../../ArpTable.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/QVector \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qvector.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qlist.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qarraydatapointer.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qarraydataops.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qarraydata.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qpair.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qcontainerfwd.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qtconfigmacros.h \
+ArpTableWorker.o: ../../ArpTableWorker.cpp ../../../Qt/6.10.0/gcc_64/include/QtCore/QDebug \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qdebug.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qcompare.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qglobal.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qtcoreglobal.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qtversionchecks.h \
 		../../../Qt/6.10.0/gcc_64/include/QtCore/qtconfiginclude.h \
 		../../../Qt/6.10.0/gcc_64/include/QtCore/qconfig.h \
 		../../../Qt/6.10.0/gcc_64/include/QtCore/qtcore-config.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qtconfigmacros.h \
 		../../../Qt/6.10.0/gcc_64/include/QtCore/qtdeprecationdefinitions.h \
 		../../../Qt/6.10.0/gcc_64/include/QtCore/qcompilerdetection.h \
 		../../../Qt/6.10.0/gcc_64/include/QtCore/qprocessordetection.h \
 		../../../Qt/6.10.0/gcc_64/include/QtCore/qsystemdetection.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qtversionchecks.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qtypes.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qassert.h \
 		../../../Qt/6.10.0/gcc_64/include/QtCore/qtcoreexports.h \
 		../../../Qt/6.10.0/gcc_64/include/QtCore/qtdeprecationmarkers.h \
 		../../../Qt/6.10.0/gcc_64/include/QtCore/qtclasshelpermacros.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qtnoop.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qglobal.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qtcoreglobal.h \
 		../../../Qt/6.10.0/gcc_64/include/QtCore/qtpreprocessorsupport.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qassert.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qtnoop.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qtypes.h \
 		../../../Qt/6.10.0/gcc_64/include/QtCore/qtversion.h \
 		../../../Qt/6.10.0/gcc_64/include/QtCore/qtypeinfo.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qcontainerfwd.h \
 		../../../Qt/6.10.0/gcc_64/include/QtCore/qsysinfo.h \
 		../../../Qt/6.10.0/gcc_64/include/QtCore/qlogging.h \
 		../../../Qt/6.10.0/gcc_64/include/QtCore/qflags.h \
@@ -2298,22 +2327,26 @@ ArpTableWorker.o: ../../ArpTableWorker.cpp ../../ArpTable.h \
 		../../../Qt/6.10.0/gcc_64/include/QtCore/qtresource.h \
 		../../../Qt/6.10.0/gcc_64/include/QtCore/qttranslation.h \
 		../../../Qt/6.10.0/gcc_64/include/QtCore/qversiontagging.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qcontainertools_impl.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qxptype_traits.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qnamespace.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qcompare.h \
 		../../../Qt/6.10.0/gcc_64/include/QtCore/qstdlibdetection.h \
 		../../../Qt/6.10.0/gcc_64/include/QtCore/qcomparehelpers.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qtmetamacros.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/q20functional.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/q20memory.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/q17memory.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qfloat16.h \
 		../../../Qt/6.10.0/gcc_64/include/QtCore/qhashfunctions.h \
 		../../../Qt/6.10.0/gcc_64/include/QtCore/qstring.h \
 		../../../Qt/6.10.0/gcc_64/include/QtCore/qchar.h \
 		../../../Qt/6.10.0/gcc_64/include/QtCore/qstringview.h \
 		../../../Qt/6.10.0/gcc_64/include/QtCore/qbytearray.h \
 		../../../Qt/6.10.0/gcc_64/include/QtCore/qrefcount.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qnamespace.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qtmetamacros.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qarraydata.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qpair.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qarraydatapointer.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qarraydataops.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qcontainertools_impl.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qxptype_traits.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/q20functional.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/q20memory.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/q17memory.h \
 		../../../Qt/6.10.0/gcc_64/include/QtCore/qbytearrayalgorithms.h \
 		../../../Qt/6.10.0/gcc_64/include/QtCore/qbytearrayview.h \
 		../../../Qt/6.10.0/gcc_64/include/QtCore/qstringfwd.h \
@@ -2326,36 +2359,50 @@ ArpTableWorker.o: ../../ArpTableWorker.cpp ../../ArpTable.h \
 		../../../Qt/6.10.0/gcc_64/include/QtCore/qstringbuilder.h \
 		../../../Qt/6.10.0/gcc_64/include/QtCore/qstringconverter.h \
 		../../../Qt/6.10.0/gcc_64/include/QtCore/qstringconverter_base.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qmath.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qalgorithms.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qtformat_impl.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qtextstream.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qiodevicebase.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qcontiguouscache.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qsharedpointer.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qshareddata.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qsharedpointer_impl.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qmetatype.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qdatastream.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qscopedpointer.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qiterable.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qmetacontainer.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qcontainerinfo.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qtaggedpointer.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qobjectdefs.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qobjectdefs_impl.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qfunctionaltools_impl.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qscopeguard.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qlist.h \
 		../../../Qt/6.10.0/gcc_64/include/QtCore/qiterator.h \
 		../../../Qt/6.10.0/gcc_64/include/QtCore/qbytearraylist.h \
 		../../../Qt/6.10.0/gcc_64/include/QtCore/qstringlist.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qalgorithms.h \
 		../../../Qt/6.10.0/gcc_64/include/QtCore/qstringmatcher.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qmap.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qshareddata_impl.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qset.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qhash.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qvarlengtharray.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qalloc.h \
+		../../ArpTable.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/QVector \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qvector.h \
 		../../ArpTableEntry.h \
 		../../../Qt/6.10.0/gcc_64/include/QtCore/QString \
 		../../ArpTableWorker.h \
 		../../../Qt/6.10.0/gcc_64/include/QtCore/QObject \
 		../../../Qt/6.10.0/gcc_64/include/QtCore/qobject.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qobjectdefs.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qobjectdefs_impl.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qfunctionaltools_impl.h \
 		../../../Qt/6.10.0/gcc_64/include/QtCore/qcoreevent.h \
 		../../../Qt/6.10.0/gcc_64/include/QtCore/qbasictimer.h \
 		../../../Qt/6.10.0/gcc_64/include/QtCore/qabstracteventdispatcher.h \
 		../../../Qt/6.10.0/gcc_64/include/QtCore/qeventloop.h \
 		../../../Qt/6.10.0/gcc_64/include/QtCore/qdeadlinetimer.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qmetatype.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qdatastream.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qiodevicebase.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qscopedpointer.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qfloat16.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qmath.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qtformat_impl.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qiterable.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qmetacontainer.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qcontainerinfo.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qtaggedpointer.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qscopeguard.h \
 		../../../Qt/6.10.0/gcc_64/include/QtCore/qobject_impl.h \
 		../../../Qt/6.10.0/gcc_64/include/QtCore/qbindingstorage.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o ArpTableWorker.o ../../ArpTableWorker.cpp
@@ -2473,23 +2520,10 @@ Port.o: ../../Port.cpp ../../RouterWorker.h \
 		../../Router.h \
 		../../Port.h \
 		../../Traffic.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/QString \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/QDebug \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qdebug.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qtextstream.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qcontiguouscache.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qsharedpointer.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qshareddata.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qsharedpointer_impl.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qmap.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qshareddata_impl.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qset.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qhash.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qvarlengtharray.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qalloc.h
+		../../../Qt/6.10.0/gcc_64/include/QtCore/QString
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o Port.o ../../Port.cpp
 
-PortWorker.o: ../../PortWorker.cpp ../../RouterWorker.h \
+PortWorker.o: ../../PortWorker.cpp ../../PortWorker.h \
 		../../../Qt/6.10.0/gcc_64/include/QtCore/QObject \
 		../../../Qt/6.10.0/gcc_64/include/QtCore/qobject.h \
 		../../../Qt/6.10.0/gcc_64/include/QtCore/qobjectdefs.h \
@@ -2599,13 +2633,12 @@ PortWorker.o: ../../PortWorker.cpp ../../RouterWorker.h \
 		../../../Qt/6.10.0/gcc_64/include/QtCore/qscopeguard.h \
 		../../../Qt/6.10.0/gcc_64/include/QtCore/qobject_impl.h \
 		../../../Qt/6.10.0/gcc_64/include/QtCore/qbindingstorage.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/QTimer \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qtimer.h \
 		../../Router.h \
 		../../Port.h \
 		../../Traffic.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/QString \
-		../../PortWorker.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/QTimer \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qtimer.h
+		../../../Qt/6.10.0/gcc_64/include/QtCore/QString
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o PortWorker.o ../../PortWorker.cpp
 
 RouteTable.o: ../../RouteTable.cpp ../../RouteTable.h \
@@ -2697,7 +2730,35 @@ RouteTable.o: ../../RouteTable.cpp ../../RouteTable.h \
 		../../../Qt/6.10.0/gcc_64/include/QtCore/qalgorithms.h \
 		../../../Qt/6.10.0/gcc_64/include/QtCore/qstringmatcher.h \
 		../../RouteTableEntry.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/QString
+		../../../Qt/6.10.0/gcc_64/include/QtCore/QString \
+		../../RouterWorker.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/QObject \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qobject.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qobjectdefs.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qobjectdefs_impl.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qfunctionaltools_impl.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qcoreevent.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qbasictimer.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qabstracteventdispatcher.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qeventloop.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qdeadlinetimer.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qmetatype.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qdatastream.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qiodevicebase.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qscopedpointer.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qfloat16.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qmath.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qtformat_impl.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qiterable.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qmetacontainer.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qcontainerinfo.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qtaggedpointer.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qscopeguard.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qobject_impl.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qbindingstorage.h \
+		../../Router.h \
+		../../Port.h \
+		../../Traffic.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o RouteTable.o ../../RouteTable.cpp
 
 RouteTableWorker.o: ../../RouteTableWorker.cpp ../../RouteTable.h \
@@ -2817,11 +2878,9 @@ RouteTableWorker.o: ../../RouteTableWorker.cpp ../../RouteTable.h \
 		../../../Qt/6.10.0/gcc_64/include/QtCore/qbindingstorage.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o RouteTableWorker.o ../../RouteTableWorker.cpp
 
-Router.o: ../../Router.cpp ../../RouterWorker.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/QObject \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qobject.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qobjectdefs.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qnamespace.h \
+Router.o: ../../Router.cpp ../../../Qt/6.10.0/gcc_64/include/QtCore/QDebug \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qdebug.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qcompare.h \
 		../../../Qt/6.10.0/gcc_64/include/QtCore/qglobal.h \
 		../../../Qt/6.10.0/gcc_64/include/QtCore/qtcoreglobal.h \
 		../../../Qt/6.10.0/gcc_64/include/QtCore/qtversionchecks.h \
@@ -2869,17 +2928,17 @@ Router.o: ../../Router.cpp ../../RouterWorker.h \
 		../../../Qt/6.10.0/gcc_64/include/QtCore/qtresource.h \
 		../../../Qt/6.10.0/gcc_64/include/QtCore/qttranslation.h \
 		../../../Qt/6.10.0/gcc_64/include/QtCore/qversiontagging.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qcompare.h \
 		../../../Qt/6.10.0/gcc_64/include/QtCore/qstdlibdetection.h \
 		../../../Qt/6.10.0/gcc_64/include/QtCore/qcomparehelpers.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qtmetamacros.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qobjectdefs_impl.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qfunctionaltools_impl.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qfloat16.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qhashfunctions.h \
 		../../../Qt/6.10.0/gcc_64/include/QtCore/qstring.h \
 		../../../Qt/6.10.0/gcc_64/include/QtCore/qchar.h \
 		../../../Qt/6.10.0/gcc_64/include/QtCore/qstringview.h \
 		../../../Qt/6.10.0/gcc_64/include/QtCore/qbytearray.h \
 		../../../Qt/6.10.0/gcc_64/include/QtCore/qrefcount.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qnamespace.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qtmetamacros.h \
 		../../../Qt/6.10.0/gcc_64/include/QtCore/qarraydata.h \
 		../../../Qt/6.10.0/gcc_64/include/QtCore/qpair.h \
 		../../../Qt/6.10.0/gcc_64/include/QtCore/qarraydatapointer.h \
@@ -2901,49 +2960,64 @@ Router.o: ../../Router.cpp ../../RouterWorker.h \
 		../../../Qt/6.10.0/gcc_64/include/QtCore/qstringbuilder.h \
 		../../../Qt/6.10.0/gcc_64/include/QtCore/qstringconverter.h \
 		../../../Qt/6.10.0/gcc_64/include/QtCore/qstringconverter_base.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qlist.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qhashfunctions.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qiterator.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qbytearraylist.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qstringlist.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qalgorithms.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qstringmatcher.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qcoreevent.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qbasictimer.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qabstracteventdispatcher.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qeventloop.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qdeadlinetimer.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qmetatype.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qdatastream.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qiodevicebase.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qscopedpointer.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qfloat16.h \
 		../../../Qt/6.10.0/gcc_64/include/QtCore/qmath.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qalgorithms.h \
 		../../../Qt/6.10.0/gcc_64/include/QtCore/qtformat_impl.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qiterable.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qmetacontainer.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qcontainerinfo.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qtaggedpointer.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qscopeguard.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qobject_impl.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qbindingstorage.h \
-		../../Router.h \
-		../../Port.h \
-		../../Traffic.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/QString \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/QDebug \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qdebug.h \
 		../../../Qt/6.10.0/gcc_64/include/QtCore/qtextstream.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qiodevicebase.h \
 		../../../Qt/6.10.0/gcc_64/include/QtCore/qcontiguouscache.h \
 		../../../Qt/6.10.0/gcc_64/include/QtCore/qsharedpointer.h \
 		../../../Qt/6.10.0/gcc_64/include/QtCore/qshareddata.h \
 		../../../Qt/6.10.0/gcc_64/include/QtCore/qsharedpointer_impl.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qmetatype.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qdatastream.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qscopedpointer.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qiterable.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qmetacontainer.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qcontainerinfo.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qtaggedpointer.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qobjectdefs.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qobjectdefs_impl.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qfunctionaltools_impl.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qscopeguard.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qlist.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qiterator.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qbytearraylist.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qstringlist.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qstringmatcher.h \
 		../../../Qt/6.10.0/gcc_64/include/QtCore/qmap.h \
 		../../../Qt/6.10.0/gcc_64/include/QtCore/qshareddata_impl.h \
 		../../../Qt/6.10.0/gcc_64/include/QtCore/qset.h \
 		../../../Qt/6.10.0/gcc_64/include/QtCore/qhash.h \
 		../../../Qt/6.10.0/gcc_64/include/QtCore/qvarlengtharray.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qalloc.h
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qalloc.h \
+		../../../Qt/6.10.0/gcc_64/include/QtSql/QSqlDatabase \
+		../../../Qt/6.10.0/gcc_64/include/QtSql/qsqldatabase.h \
+		../../../Qt/6.10.0/gcc_64/include/QtSql/qtsqlglobal.h \
+		../../../Qt/6.10.0/gcc_64/include/QtSql/qtsql-config.h \
+		../../../Qt/6.10.0/gcc_64/include/QtSql/qtsqlexports.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qmetaobject.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qvariant.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/q23utility.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/q20utility.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qobject.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qcoreevent.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qbasictimer.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qabstracteventdispatcher.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qeventloop.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qdeadlinetimer.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qobject_impl.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qbindingstorage.h \
+		../../../Qt/6.10.0/gcc_64/include/QtSql/QSqlQuery \
+		../../../Qt/6.10.0/gcc_64/include/QtSql/qsqlquery.h \
+		../../../Qt/6.10.0/gcc_64/include/QtSql/QSqlError \
+		../../../Qt/6.10.0/gcc_64/include/QtSql/qsqlerror.h \
+		../../RouterWorker.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/QObject \
+		../../Router.h \
+		../../Port.h \
+		../../Traffic.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/QString
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o Router.o ../../Router.cpp
 
 RouterWorker.o: ../../RouterWorker.cpp ../../RouterWorker.h \
@@ -3059,45 +3133,36 @@ RouterWorker.o: ../../RouterWorker.cpp ../../RouterWorker.h \
 		../../Router.h \
 		../../Port.h \
 		../../Traffic.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/QString \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/QDebug \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qdebug.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qtextstream.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qcontiguouscache.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qsharedpointer.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qshareddata.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qsharedpointer_impl.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qmap.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qshareddata_impl.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qset.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qhash.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qvarlengtharray.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qalloc.h
+		../../../Qt/6.10.0/gcc_64/include/QtCore/QString
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o RouterWorker.o ../../RouterWorker.cpp
 
-arptablewindow.o: ../../arptablewindow.cpp ../../arptablewindow.h \
-		../../../Qt/6.10.0/gcc_64/include/QtWidgets/QMainWindow \
-		../../../Qt/6.10.0/gcc_64/include/QtWidgets/qmainwindow.h \
-		../../../Qt/6.10.0/gcc_64/include/QtWidgets/qtwidgetsglobal.h \
-		../../../Qt/6.10.0/gcc_64/include/QtGui/qtguiglobal.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qglobal.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qtcoreglobal.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qtversionchecks.h \
+arptablewindow.o: ../../arptablewindow.cpp ui_arptablewindow.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/QVariant \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qvariant.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qatomic.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qbasicatomic.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qatomic_cxx11.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qgenericatomic.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qcompilerdetection.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qprocessordetection.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qsystemdetection.h \
 		../../../Qt/6.10.0/gcc_64/include/QtCore/qtconfiginclude.h \
 		../../../Qt/6.10.0/gcc_64/include/QtCore/qconfig.h \
 		../../../Qt/6.10.0/gcc_64/include/QtCore/qtcore-config.h \
 		../../../Qt/6.10.0/gcc_64/include/QtCore/qtconfigmacros.h \
 		../../../Qt/6.10.0/gcc_64/include/QtCore/qtdeprecationdefinitions.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qcompilerdetection.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qprocessordetection.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qsystemdetection.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qtversionchecks.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qtypes.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qassert.h \
 		../../../Qt/6.10.0/gcc_64/include/QtCore/qtcoreexports.h \
 		../../../Qt/6.10.0/gcc_64/include/QtCore/qtdeprecationmarkers.h \
 		../../../Qt/6.10.0/gcc_64/include/QtCore/qtclasshelpermacros.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qtpreprocessorsupport.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qassert.h \
 		../../../Qt/6.10.0/gcc_64/include/QtCore/qtnoop.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qtypes.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qyieldcpu.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qcompare.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qglobal.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qtcoreglobal.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qtpreprocessorsupport.h \
 		../../../Qt/6.10.0/gcc_64/include/QtCore/qtversion.h \
 		../../../Qt/6.10.0/gcc_64/include/QtCore/qtypeinfo.h \
 		../../../Qt/6.10.0/gcc_64/include/QtCore/qcontainerfwd.h \
@@ -3105,11 +3170,6 @@ arptablewindow.o: ../../arptablewindow.cpp ../../arptablewindow.h \
 		../../../Qt/6.10.0/gcc_64/include/QtCore/qlogging.h \
 		../../../Qt/6.10.0/gcc_64/include/QtCore/qflags.h \
 		../../../Qt/6.10.0/gcc_64/include/QtCore/qcompare_impl.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qatomic.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qbasicatomic.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qatomic_cxx11.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qgenericatomic.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qyieldcpu.h \
 		../../../Qt/6.10.0/gcc_64/include/QtCore/qconstructormacros.h \
 		../../../Qt/6.10.0/gcc_64/include/QtCore/qdarwinhelpers.h \
 		../../../Qt/6.10.0/gcc_64/include/QtCore/qexceptionhandling.h \
@@ -3127,26 +3187,13 @@ arptablewindow.o: ../../arptablewindow.cpp ../../arptablewindow.h \
 		../../../Qt/6.10.0/gcc_64/include/QtCore/qtresource.h \
 		../../../Qt/6.10.0/gcc_64/include/QtCore/qttranslation.h \
 		../../../Qt/6.10.0/gcc_64/include/QtCore/qversiontagging.h \
-		../../../Qt/6.10.0/gcc_64/include/QtGui/qtgui-config.h \
-		../../../Qt/6.10.0/gcc_64/include/QtGui/qtguiexports.h \
-		../../../Qt/6.10.0/gcc_64/include/QtWidgets/qtwidgets-config.h \
-		../../../Qt/6.10.0/gcc_64/include/QtWidgets/qtwidgetsexports.h \
-		../../../Qt/6.10.0/gcc_64/include/QtWidgets/qwidget.h \
-		../../../Qt/6.10.0/gcc_64/include/QtGui/qwindowdefs.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qobjectdefs.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qnamespace.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qcompare.h \
 		../../../Qt/6.10.0/gcc_64/include/QtCore/qstdlibdetection.h \
 		../../../Qt/6.10.0/gcc_64/include/QtCore/qcomparehelpers.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qtmetamacros.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qobjectdefs_impl.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qfunctionaltools_impl.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qobject.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qstring.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qchar.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qstringview.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qmetatype.h \
 		../../../Qt/6.10.0/gcc_64/include/QtCore/qbytearray.h \
 		../../../Qt/6.10.0/gcc_64/include/QtCore/qrefcount.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qnamespace.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qtmetamacros.h \
 		../../../Qt/6.10.0/gcc_64/include/QtCore/qarraydata.h \
 		../../../Qt/6.10.0/gcc_64/include/QtCore/qpair.h \
 		../../../Qt/6.10.0/gcc_64/include/QtCore/qarraydatapointer.h \
@@ -3159,8 +3206,16 @@ arptablewindow.o: ../../arptablewindow.cpp ../../arptablewindow.h \
 		../../../Qt/6.10.0/gcc_64/include/QtCore/qbytearrayalgorithms.h \
 		../../../Qt/6.10.0/gcc_64/include/QtCore/qbytearrayview.h \
 		../../../Qt/6.10.0/gcc_64/include/QtCore/qstringfwd.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qdatastream.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qchar.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qstringview.h \
 		../../../Qt/6.10.0/gcc_64/include/QtCore/qstringliteral.h \
 		../../../Qt/6.10.0/gcc_64/include/QtCore/qstringalgorithms.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qiodevicebase.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qscopedpointer.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qfloat16.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qhashfunctions.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qstring.h \
 		../../../Qt/6.10.0/gcc_64/include/QtCore/qlatin1stringview.h \
 		../../../Qt/6.10.0/gcc_64/include/QtCore/qanystringview.h \
 		../../../Qt/6.10.0/gcc_64/include/QtCore/qutf8stringview.h \
@@ -3168,48 +3223,79 @@ arptablewindow.o: ../../arptablewindow.cpp ../../arptablewindow.h \
 		../../../Qt/6.10.0/gcc_64/include/QtCore/qstringbuilder.h \
 		../../../Qt/6.10.0/gcc_64/include/QtCore/qstringconverter.h \
 		../../../Qt/6.10.0/gcc_64/include/QtCore/qstringconverter_base.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qlist.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qhashfunctions.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qiterator.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qbytearraylist.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qstringlist.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qalgorithms.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qstringmatcher.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qcoreevent.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qbasictimer.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qabstracteventdispatcher.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qeventloop.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qdeadlinetimer.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qmetatype.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qdatastream.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qiodevicebase.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qscopedpointer.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qfloat16.h \
 		../../../Qt/6.10.0/gcc_64/include/QtCore/qmath.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qalgorithms.h \
 		../../../Qt/6.10.0/gcc_64/include/QtCore/qtformat_impl.h \
 		../../../Qt/6.10.0/gcc_64/include/QtCore/qiterable.h \
 		../../../Qt/6.10.0/gcc_64/include/QtCore/qmetacontainer.h \
 		../../../Qt/6.10.0/gcc_64/include/QtCore/qcontainerinfo.h \
 		../../../Qt/6.10.0/gcc_64/include/QtCore/qtaggedpointer.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qobjectdefs.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qobjectdefs_impl.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qfunctionaltools_impl.h \
 		../../../Qt/6.10.0/gcc_64/include/QtCore/qscopeguard.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qobject_impl.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qbindingstorage.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qmargins.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qcheckedint_impl.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qdebug.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qtextstream.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qcontiguouscache.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qsharedpointer.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qshareddata.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qsharedpointer_impl.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qlist.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qiterator.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qbytearraylist.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qstringlist.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qstringmatcher.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qmap.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qshareddata_impl.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qset.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qhash.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qvarlengtharray.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qalloc.h \
 		../../../Qt/6.10.0/gcc_64/include/QtCore/q23utility.h \
 		../../../Qt/6.10.0/gcc_64/include/QtCore/q20utility.h \
-		../../../Qt/6.10.0/gcc_64/include/QtGui/qaction.h \
-		../../../Qt/6.10.0/gcc_64/include/QtGui/qkeysequence.h \
-		../../../Qt/6.10.0/gcc_64/include/QtGui/qicon.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qobject.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qcoreevent.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qbasictimer.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qabstracteventdispatcher.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qeventloop.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qdeadlinetimer.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qobject_impl.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qbindingstorage.h \
+		../../../Qt/6.10.0/gcc_64/include/QtWidgets/QApplication \
+		../../../Qt/6.10.0/gcc_64/include/QtWidgets/qapplication.h \
+		../../../Qt/6.10.0/gcc_64/include/QtWidgets/qtwidgetsglobal.h \
+		../../../Qt/6.10.0/gcc_64/include/QtGui/qtguiglobal.h \
+		../../../Qt/6.10.0/gcc_64/include/QtGui/qtgui-config.h \
+		../../../Qt/6.10.0/gcc_64/include/QtGui/qtguiexports.h \
+		../../../Qt/6.10.0/gcc_64/include/QtWidgets/qtwidgets-config.h \
+		../../../Qt/6.10.0/gcc_64/include/QtWidgets/qtwidgetsexports.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qcoreapplication.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qnativeinterface.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qcoreapplication_platform.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qfuture.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qfutureinterface.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qmutex.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qtsan_impl.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qresultstore.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qfuture_impl.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qthreadpool.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qthread.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qrunnable.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qexception.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qpromise.h \
+		../../../Qt/6.10.0/gcc_64/include/QtGui/qwindowdefs.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qpoint.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qcheckedint_impl.h \
 		../../../Qt/6.10.0/gcc_64/include/QtCore/qsize.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qmargins.h \
+		../../../Qt/6.10.0/gcc_64/include/QtGui/qcursor.h \
+		../../../Qt/6.10.0/gcc_64/include/QtGui/qbitmap.h \
 		../../../Qt/6.10.0/gcc_64/include/QtGui/qpixmap.h \
 		../../../Qt/6.10.0/gcc_64/include/QtGui/qpaintdevice.h \
 		../../../Qt/6.10.0/gcc_64/include/QtCore/qrect.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qpoint.h \
 		../../../Qt/6.10.0/gcc_64/include/QtGui/qcolor.h \
 		../../../Qt/6.10.0/gcc_64/include/QtGui/qrgb.h \
 		../../../Qt/6.10.0/gcc_64/include/QtGui/qrgba64.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qshareddata.h \
 		../../../Qt/6.10.0/gcc_64/include/QtGui/qimage.h \
 		../../../Qt/6.10.0/gcc_64/include/QtGui/qpixelformat.h \
 		../../../Qt/6.10.0/gcc_64/include/QtGui/qtransform.h \
@@ -3218,18 +3304,16 @@ arptablewindow.o: ../../arptablewindow.cpp ../../arptablewindow.h \
 		../../../Qt/6.10.0/gcc_64/include/QtCore/qspan.h \
 		../../../Qt/6.10.0/gcc_64/include/QtCore/q20iterator.h \
 		../../../Qt/6.10.0/gcc_64/include/QtCore/qline.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qvariant.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qdebug.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qtextstream.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qcontiguouscache.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qsharedpointer.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qsharedpointer_impl.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qmap.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qshareddata_impl.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qset.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qhash.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qvarlengtharray.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qalloc.h \
+		../../../Qt/6.10.0/gcc_64/include/QtGui/qguiapplication.h \
+		../../../Qt/6.10.0/gcc_64/include/QtGui/qinputmethod.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qlocale.h \
+		../../../Qt/6.10.0/gcc_64/include/QtGui/qguiapplication_platform.h \
+		../../../Qt/6.10.0/gcc_64/include/QtWidgets/QComboBox \
+		../../../Qt/6.10.0/gcc_64/include/QtWidgets/qcombobox.h \
+		../../../Qt/6.10.0/gcc_64/include/QtWidgets/qwidget.h \
+		../../../Qt/6.10.0/gcc_64/include/QtGui/qaction.h \
+		../../../Qt/6.10.0/gcc_64/include/QtGui/qkeysequence.h \
+		../../../Qt/6.10.0/gcc_64/include/QtGui/qicon.h \
 		../../../Qt/6.10.0/gcc_64/include/QtGui/qpalette.h \
 		../../../Qt/6.10.0/gcc_64/include/QtGui/qbrush.h \
 		../../../Qt/6.10.0/gcc_64/include/QtGui/qfont.h \
@@ -3238,8 +3322,6 @@ arptablewindow.o: ../../arptablewindow.cpp ../../arptablewindow.h \
 		../../../Qt/6.10.0/gcc_64/include/QtGui/qfontinfo.h \
 		../../../Qt/6.10.0/gcc_64/include/QtGui/qfontvariableaxis.h \
 		../../../Qt/6.10.0/gcc_64/include/QtWidgets/qsizepolicy.h \
-		../../../Qt/6.10.0/gcc_64/include/QtGui/qcursor.h \
-		../../../Qt/6.10.0/gcc_64/include/QtGui/qbitmap.h \
 		../../../Qt/6.10.0/gcc_64/include/QtGui/qevent.h \
 		../../../Qt/6.10.0/gcc_64/include/QtCore/qiodevice.h \
 		../../../Qt/6.10.0/gcc_64/include/QtCore/qurl.h \
@@ -3255,33 +3337,7 @@ arptablewindow.o: ../../arptablewindow.cpp ../../arptablewindow.h \
 		../../../Qt/6.10.0/gcc_64/include/QtCore/QSize \
 		../../../Qt/6.10.0/gcc_64/include/QtCore/QSizeF \
 		../../../Qt/6.10.0/gcc_64/include/QtGui/QTransform \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qnativeinterface.h \
 		../../../Qt/6.10.0/gcc_64/include/QtGui/qscreen_platform.h \
-		../../../Qt/6.10.0/gcc_64/include/QtGui/qguiapplication.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qcoreapplication.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qcoreapplication_platform.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qfuture.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qfutureinterface.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qmutex.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qtsan_impl.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qresultstore.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qfuture_impl.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qthreadpool.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qthread.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qrunnable.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qexception.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qpromise.h \
-		../../../Qt/6.10.0/gcc_64/include/QtGui/qinputmethod.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/qlocale.h \
-		../../../Qt/6.10.0/gcc_64/include/QtGui/qguiapplication_platform.h \
-		../../../Qt/6.10.0/gcc_64/include/QtWidgets/qtabwidget.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/QThread \
-		ui_arptablewindow.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/QVariant \
-		../../../Qt/6.10.0/gcc_64/include/QtWidgets/QApplication \
-		../../../Qt/6.10.0/gcc_64/include/QtWidgets/qapplication.h \
-		../../../Qt/6.10.0/gcc_64/include/QtWidgets/QComboBox \
-		../../../Qt/6.10.0/gcc_64/include/QtWidgets/qcombobox.h \
 		../../../Qt/6.10.0/gcc_64/include/QtWidgets/qabstractitemdelegate.h \
 		../../../Qt/6.10.0/gcc_64/include/QtWidgets/qstyleoption.h \
 		../../../Qt/6.10.0/gcc_64/include/QtWidgets/qabstractspinbox.h \
@@ -3291,6 +3347,7 @@ arptablewindow.o: ../../arptablewindow.cpp ../../arptablewindow.h \
 		../../../Qt/6.10.0/gcc_64/include/QtWidgets/qabstractslider.h \
 		../../../Qt/6.10.0/gcc_64/include/QtWidgets/qstyle.h \
 		../../../Qt/6.10.0/gcc_64/include/QtWidgets/qtabbar.h \
+		../../../Qt/6.10.0/gcc_64/include/QtWidgets/qtabwidget.h \
 		../../../Qt/6.10.0/gcc_64/include/QtWidgets/qrubberband.h \
 		../../../Qt/6.10.0/gcc_64/include/QtWidgets/qframe.h \
 		../../../Qt/6.10.0/gcc_64/include/QtCore/qabstractitemmodel.h \
@@ -3304,6 +3361,8 @@ arptablewindow.o: ../../arptablewindow.cpp ../../arptablewindow.h \
 		../../../Qt/6.10.0/gcc_64/include/QtWidgets/qlabel.h \
 		../../../Qt/6.10.0/gcc_64/include/QtGui/qpicture.h \
 		../../../Qt/6.10.0/gcc_64/include/QtGui/qtextdocument.h \
+		../../../Qt/6.10.0/gcc_64/include/QtWidgets/QMainWindow \
+		../../../Qt/6.10.0/gcc_64/include/QtWidgets/qmainwindow.h \
 		../../../Qt/6.10.0/gcc_64/include/QtWidgets/QMenuBar \
 		../../../Qt/6.10.0/gcc_64/include/QtWidgets/qmenubar.h \
 		../../../Qt/6.10.0/gcc_64/include/QtWidgets/qmenu.h \
@@ -3316,12 +3375,27 @@ arptablewindow.o: ../../arptablewindow.cpp ../../arptablewindow.h \
 		../../../Qt/6.10.0/gcc_64/include/QtWidgets/qtablewidget.h \
 		../../../Qt/6.10.0/gcc_64/include/QtWidgets/qtableview.h \
 		../../../Qt/6.10.0/gcc_64/include/QtWidgets/QWidget \
+		../../arptablewindow.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/QThread \
+		../../../Qt/6.10.0/gcc_64/include/QtSql/QSqlDatabase \
+		../../../Qt/6.10.0/gcc_64/include/QtSql/qsqldatabase.h \
+		../../../Qt/6.10.0/gcc_64/include/QtSql/qtsqlglobal.h \
+		../../../Qt/6.10.0/gcc_64/include/QtSql/qtsql-config.h \
+		../../../Qt/6.10.0/gcc_64/include/QtSql/qtsqlexports.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qmetaobject.h \
+		../../../Qt/6.10.0/gcc_64/include/QtSql/QSqlQuery \
+		../../../Qt/6.10.0/gcc_64/include/QtSql/qsqlquery.h \
+		../../../Qt/6.10.0/gcc_64/include/QtSql/QSqlError \
+		../../../Qt/6.10.0/gcc_64/include/QtSql/qsqlerror.h \
 		../../ArpTableWorker.h \
 		../../ArpTable.h \
 		../../../Qt/6.10.0/gcc_64/include/QtCore/QVector \
 		../../../Qt/6.10.0/gcc_64/include/QtCore/qvector.h \
 		../../ArpTableEntry.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/QString
+		../../../Qt/6.10.0/gcc_64/include/QtCore/QString \
+		../../Router.h \
+		../../Port.h \
+		../../Traffic.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o arptablewindow.o ../../arptablewindow.cpp
 
 main.o: ../../main.cpp ../../../Qt/6.10.0/gcc_64/include/QtWidgets/QApplication \
@@ -3500,8 +3574,6 @@ main.o: ../../main.cpp ../../../Qt/6.10.0/gcc_64/include/QtWidgets/QApplication 
 		../../../Qt/6.10.0/gcc_64/include/QtSql/qtsql-config.h \
 		../../../Qt/6.10.0/gcc_64/include/QtSql/qtsqlexports.h \
 		../../../Qt/6.10.0/gcc_64/include/QtCore/qmetaobject.h \
-		../../../Qt/6.10.0/gcc_64/include/QtSql/QSqlQuery \
-		../../../Qt/6.10.0/gcc_64/include/QtSql/qsqlquery.h \
 		../../../Qt/6.10.0/gcc_64/include/QtSql/QSqlError \
 		../../../Qt/6.10.0/gcc_64/include/QtSql/qsqlerror.h \
 		../../mainwindow.h \
@@ -3546,11 +3618,15 @@ main.o: ../../main.cpp ../../../Qt/6.10.0/gcc_64/include/QtWidgets/QApplication 
 		../../../Qt/6.10.0/gcc_64/include/QtCore/qtimer.h \
 		../../registerdevicewindow.h \
 		../../arptablewindow.h \
-		../../routingtablewindow.h
+		../../../Qt/6.10.0/gcc_64/include/QtSql/QSqlQuery \
+		../../../Qt/6.10.0/gcc_64/include/QtSql/qsqlquery.h \
+		../../routingtablewindow.h \
+		../../../Qt/6.10.0/gcc_64/include/QtSql/QSqlRecord \
+		../../../Qt/6.10.0/gcc_64/include/QtSql/qsqlrecord.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../../main.cpp
 
-mainwindow.o: ../../mainwindow.cpp ../../../Qt/6.10.0/gcc_64/include/QtWidgets/QMainWindow \
-		../../../Qt/6.10.0/gcc_64/include/QtWidgets/qmainwindow.h \
+mainwindow.o: ../../mainwindow.cpp ../../../Qt/6.10.0/gcc_64/include/QtWidgets/QMessageBox \
+		../../../Qt/6.10.0/gcc_64/include/QtWidgets/qmessagebox.h \
 		../../../Qt/6.10.0/gcc_64/include/QtWidgets/qtwidgetsglobal.h \
 		../../../Qt/6.10.0/gcc_64/include/QtGui/qtguiglobal.h \
 		../../../Qt/6.10.0/gcc_64/include/QtCore/qglobal.h \
@@ -3604,6 +3680,7 @@ mainwindow.o: ../../mainwindow.cpp ../../../Qt/6.10.0/gcc_64/include/QtWidgets/Q
 		../../../Qt/6.10.0/gcc_64/include/QtGui/qtguiexports.h \
 		../../../Qt/6.10.0/gcc_64/include/QtWidgets/qtwidgets-config.h \
 		../../../Qt/6.10.0/gcc_64/include/QtWidgets/qtwidgetsexports.h \
+		../../../Qt/6.10.0/gcc_64/include/QtWidgets/qdialog.h \
 		../../../Qt/6.10.0/gcc_64/include/QtWidgets/qwidget.h \
 		../../../Qt/6.10.0/gcc_64/include/QtGui/qwindowdefs.h \
 		../../../Qt/6.10.0/gcc_64/include/QtCore/qobjectdefs.h \
@@ -3747,12 +3824,21 @@ mainwindow.o: ../../mainwindow.cpp ../../../Qt/6.10.0/gcc_64/include/QtWidgets/Q
 		../../../Qt/6.10.0/gcc_64/include/QtGui/qinputmethod.h \
 		../../../Qt/6.10.0/gcc_64/include/QtCore/qlocale.h \
 		../../../Qt/6.10.0/gcc_64/include/QtGui/qguiapplication_platform.h \
-		../../../Qt/6.10.0/gcc_64/include/QtWidgets/qtabwidget.h \
-		../../../Qt/6.10.0/gcc_64/include/QtWidgets/QMessageBox \
-		../../../Qt/6.10.0/gcc_64/include/QtWidgets/qmessagebox.h \
-		../../../Qt/6.10.0/gcc_64/include/QtWidgets/qdialog.h \
 		../../../Qt/6.10.0/gcc_64/include/QtWidgets/qdialogbuttonbox.h \
+		../../../Qt/6.10.0/gcc_64/include/QtSql/QSqlDatabase \
+		../../../Qt/6.10.0/gcc_64/include/QtSql/qsqldatabase.h \
+		../../../Qt/6.10.0/gcc_64/include/QtSql/qtsqlglobal.h \
+		../../../Qt/6.10.0/gcc_64/include/QtSql/qtsql-config.h \
+		../../../Qt/6.10.0/gcc_64/include/QtSql/qtsqlexports.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qmetaobject.h \
+		../../../Qt/6.10.0/gcc_64/include/QtSql/QSqlQuery \
+		../../../Qt/6.10.0/gcc_64/include/QtSql/qsqlquery.h \
+		../../../Qt/6.10.0/gcc_64/include/QtSql/QSqlError \
+		../../../Qt/6.10.0/gcc_64/include/QtSql/qsqlerror.h \
 		../../mainwindow.h \
+		../../../Qt/6.10.0/gcc_64/include/QtWidgets/QMainWindow \
+		../../../Qt/6.10.0/gcc_64/include/QtWidgets/qmainwindow.h \
+		../../../Qt/6.10.0/gcc_64/include/QtWidgets/qtabwidget.h \
 		../../../Qt/6.10.0/gcc_64/include/QtCore/QThread \
 		../../Router.h \
 		../../Port.h \
@@ -3764,6 +3850,8 @@ mainwindow.o: ../../mainwindow.cpp ../../../Qt/6.10.0/gcc_64/include/QtWidgets/Q
 		../../registerdevicewindow.h \
 		../../arptablewindow.h \
 		../../routingtablewindow.h \
+		../../../Qt/6.10.0/gcc_64/include/QtSql/QSqlRecord \
+		../../../Qt/6.10.0/gcc_64/include/QtSql/qsqlrecord.h \
 		ui_mainwindow.h \
 		../../../Qt/6.10.0/gcc_64/include/QtCore/QVariant \
 		../../../Qt/6.10.0/gcc_64/include/QtWidgets/QApplication \
@@ -4016,6 +4104,8 @@ registerdevicewindow.o: ../../registerdevicewindow.cpp ../../../Qt/6.10.0/gcc_64
 		../../../Qt/6.10.0/gcc_64/include/QtSql/qsqlquery.h \
 		../../../Qt/6.10.0/gcc_64/include/QtSql/QSqlError \
 		../../../Qt/6.10.0/gcc_64/include/QtSql/qsqlerror.h \
+		../../../Qt/6.10.0/gcc_64/include/QtSql/QSqlRecord \
+		../../../Qt/6.10.0/gcc_64/include/QtSql/qsqlrecord.h \
 		../../registerdevicewindow.h \
 		../../../Qt/6.10.0/gcc_64/include/QtWidgets/QMainWindow \
 		../../../Qt/6.10.0/gcc_64/include/QtWidgets/qmainwindow.h \
@@ -4268,22 +4358,62 @@ routingtablewindow.o: ../../routingtablewindow.cpp ../../routingtablewindow.h \
 		../../../Qt/6.10.0/gcc_64/include/QtGui/qguiapplication_platform.h \
 		../../../Qt/6.10.0/gcc_64/include/QtWidgets/qtabwidget.h \
 		../../../Qt/6.10.0/gcc_64/include/QtCore/QThread \
+		../../../Qt/6.10.0/gcc_64/include/QtSql/QSqlDatabase \
+		../../../Qt/6.10.0/gcc_64/include/QtSql/qsqldatabase.h \
+		../../../Qt/6.10.0/gcc_64/include/QtSql/qtsqlglobal.h \
+		../../../Qt/6.10.0/gcc_64/include/QtSql/qtsql-config.h \
+		../../../Qt/6.10.0/gcc_64/include/QtSql/qtsqlexports.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qmetaobject.h \
+		../../../Qt/6.10.0/gcc_64/include/QtSql/QSqlQuery \
+		../../../Qt/6.10.0/gcc_64/include/QtSql/qsqlquery.h \
+		../../../Qt/6.10.0/gcc_64/include/QtSql/QSqlError \
+		../../../Qt/6.10.0/gcc_64/include/QtSql/qsqlerror.h \
+		../../../Qt/6.10.0/gcc_64/include/QtSql/QSqlRecord \
+		../../../Qt/6.10.0/gcc_64/include/QtSql/qsqlrecord.h \
 		ui_routingtablewindow.h \
 		../../../Qt/6.10.0/gcc_64/include/QtCore/QVariant \
 		../../../Qt/6.10.0/gcc_64/include/QtWidgets/QApplication \
 		../../../Qt/6.10.0/gcc_64/include/QtWidgets/qapplication.h \
+		../../../Qt/6.10.0/gcc_64/include/QtWidgets/QFrame \
+		../../../Qt/6.10.0/gcc_64/include/QtWidgets/qframe.h \
+		../../../Qt/6.10.0/gcc_64/include/QtWidgets/QHeaderView \
+		../../../Qt/6.10.0/gcc_64/include/QtWidgets/qheaderview.h \
+		../../../Qt/6.10.0/gcc_64/include/QtWidgets/qabstractitemview.h \
+		../../../Qt/6.10.0/gcc_64/include/QtWidgets/qabstractscrollarea.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qabstractitemmodel.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qitemselectionmodel.h \
+		../../../Qt/6.10.0/gcc_64/include/QtWidgets/qabstractitemdelegate.h \
+		../../../Qt/6.10.0/gcc_64/include/QtWidgets/qstyleoption.h \
+		../../../Qt/6.10.0/gcc_64/include/QtWidgets/qabstractspinbox.h \
+		../../../Qt/6.10.0/gcc_64/include/QtGui/qvalidator.h \
+		../../../Qt/6.10.0/gcc_64/include/QtCore/qregularexpression.h \
+		../../../Qt/6.10.0/gcc_64/include/QtWidgets/qslider.h \
+		../../../Qt/6.10.0/gcc_64/include/QtWidgets/qabstractslider.h \
+		../../../Qt/6.10.0/gcc_64/include/QtWidgets/qstyle.h \
+		../../../Qt/6.10.0/gcc_64/include/QtWidgets/qtabbar.h \
+		../../../Qt/6.10.0/gcc_64/include/QtWidgets/qrubberband.h \
+		../../../Qt/6.10.0/gcc_64/include/QtWidgets/QLabel \
+		../../../Qt/6.10.0/gcc_64/include/QtWidgets/qlabel.h \
+		../../../Qt/6.10.0/gcc_64/include/QtGui/qpicture.h \
+		../../../Qt/6.10.0/gcc_64/include/QtGui/qtextdocument.h \
 		../../../Qt/6.10.0/gcc_64/include/QtWidgets/QMenuBar \
 		../../../Qt/6.10.0/gcc_64/include/QtWidgets/qmenubar.h \
 		../../../Qt/6.10.0/gcc_64/include/QtWidgets/qmenu.h \
 		../../../Qt/6.10.0/gcc_64/include/QtWidgets/QStatusBar \
 		../../../Qt/6.10.0/gcc_64/include/QtWidgets/qstatusbar.h \
+		../../../Qt/6.10.0/gcc_64/include/QtWidgets/QTableWidget \
+		../../../Qt/6.10.0/gcc_64/include/QtWidgets/qtablewidget.h \
+		../../../Qt/6.10.0/gcc_64/include/QtWidgets/qtableview.h \
 		../../../Qt/6.10.0/gcc_64/include/QtWidgets/QWidget \
 		../../RouteTableWorker.h \
 		../../RouteTable.h \
 		../../../Qt/6.10.0/gcc_64/include/QtCore/QVector \
 		../../../Qt/6.10.0/gcc_64/include/QtCore/qvector.h \
 		../../RouteTableEntry.h \
-		../../../Qt/6.10.0/gcc_64/include/QtCore/QString
+		../../../Qt/6.10.0/gcc_64/include/QtCore/QString \
+		../../Router.h \
+		../../Port.h \
+		../../Traffic.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o routingtablewindow.o ../../routingtablewindow.cpp
 
 moc_ArpTableWorker.o: moc_ArpTableWorker.cpp 

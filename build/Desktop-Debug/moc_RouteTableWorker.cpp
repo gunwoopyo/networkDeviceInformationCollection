@@ -42,7 +42,7 @@ template <> constexpr inline auto RouteTableWorker::qt_create_metaobjectdata<qt_
         "routeTableProgress",
         "",
         "RouteTable*",
-        "r",
+        "table",
         "finished",
         "routeTableProcess"
     };

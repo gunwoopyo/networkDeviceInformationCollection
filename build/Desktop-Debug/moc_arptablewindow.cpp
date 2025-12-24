@@ -42,11 +42,9 @@ template <> constexpr inline auto ArpTableWindow::qt_create_metaobjectdata<qt_me
         "on_searchPushButton_clicked",
         "",
         "on_searchTotalPushButton_clicked",
-        "showArpTableInfo",
+        "showArpTable",
         "ArpTable*",
-        "port",
-        "onArpTableThreadFinished",
-        "onArpTableThreadStarted"
+        "port"
     };
 
     QtMocHelpers::UintData qt_methods {
@@ -54,14 +52,10 @@ template <> constexpr inline auto ArpTableWindow::qt_create_metaobjectdata<qt_me
         QtMocHelpers::SlotData<void()>(1, 2, QMC::AccessPublic, QMetaType::Void),
         // Slot 'on_searchTotalPushButton_clicked'
         QtMocHelpers::SlotData<void()>(3, 2, QMC::AccessPublic, QMetaType::Void),
-        // Slot 'showArpTableInfo'
+        // Slot 'showArpTable'
         QtMocHelpers::SlotData<void(ArpTable *)>(4, 2, QMC::AccessPublic, QMetaType::Void, {{
             { 0x80000000 | 5, 6 },
         }}),
-        // Slot 'onArpTableThreadFinished'
-        QtMocHelpers::SlotData<void()>(7, 2, QMC::AccessPublic, QMetaType::Void),
-        // Slot 'onArpTableThreadStarted'
-        QtMocHelpers::SlotData<void()>(8, 2, QMC::AccessPublic, QMetaType::Void),
     };
     QtMocHelpers::UintData qt_properties {
     };
@@ -87,9 +81,7 @@ void ArpTableWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _
         switch (_id) {
         case 0: _t->on_searchPushButton_clicked(); break;
         case 1: _t->on_searchTotalPushButton_clicked(); break;
-        case 2: _t->showArpTableInfo((*reinterpret_cast<std::add_pointer_t<ArpTable*>>(_a[1]))); break;
-        case 3: _t->onArpTableThreadFinished(); break;
-        case 4: _t->onArpTableThreadStarted(); break;
+        case 2: _t->showArpTable((*reinterpret_cast<std::add_pointer_t<ArpTable*>>(_a[1]))); break;
         default: ;
         }
     }
@@ -114,14 +106,14 @@ int ArpTableWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 5)
+        if (_id < 3)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 5;
+        _id -= 3;
     }
     if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 5)
+        if (_id < 3)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 5;
+        _id -= 3;
     }
     return _id;
 }

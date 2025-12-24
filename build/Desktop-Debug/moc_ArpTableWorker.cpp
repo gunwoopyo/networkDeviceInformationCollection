@@ -42,7 +42,7 @@ template <> constexpr inline auto ArpTableWorker::qt_create_metaobjectdata<qt_me
         "arpTableProgress",
         "",
         "ArpTable*",
-        "t",
+        "table",
         "finished",
         "arpTableProcess"
     };

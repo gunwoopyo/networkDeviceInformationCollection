@@ -4,15 +4,9 @@
 #include <QThread>
 #include "Router.h"
 #include "PortWorker.h"
-
 #include "registerdevicewindow.h"
 #include "arptablewindow.h"
 #include "routingtablewindow.h"
-
-
-
-
-
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -26,21 +20,13 @@ class DeviceWorker;
 
 class MainWindow : public QMainWindow {
     Q_OBJECT
-private:
 
+private:
     RouterWorker* routerWorker = nullptr;
     QThread* routerThread = nullptr;
-
-
-
     PortWorker* portWorker = nullptr;
     QThread* portThread = nullptr;
-
-
-
     Ui::MainWindow *ui;
-
-
 
 public:
     MainWindow(QWidget *parent = nullptr);
@@ -48,16 +34,19 @@ public:
 
 public slots:
     void startMyThread();
-
     void showRouterInfo(Router* routerInfo);
     void showPortInfo(Port* portInfo);   // 포트 정보 UI에 표시
     void showLoadInfo(Router* routerInfo);
     void showPortView(Router* routerInfo);
 
-    void onRouterThreadStarted();
-    void onRouterThreadFinished();
-
-    void onPortThreadStarted();
-    void onPortThreadFinished();  // 수집 완료 후 UI 업데이트/버튼 활성화
+    QString getStatusText(int status, QString text);
+    QString formatBps(double bps);
 };
 #endif // MAINWINDOW_H
+
+
+
+
+
+
+

@@ -43,7 +43,7 @@ template <> constexpr inline auto RouterWorker::qt_create_metaobjectdata<qt_meta
         "",
         "Router*",
         "router",
-        "ready",
+        "portThreadStart",
         "finished",
         "routerProcess"
     };
@@ -53,7 +53,7 @@ template <> constexpr inline auto RouterWorker::qt_create_metaobjectdata<qt_meta
         QtMocHelpers::SignalData<void(Router *)>(1, 2, QMC::AccessPublic, QMetaType::Void, {{
             { 0x80000000 | 3, 4 },
         }}),
-        // Signal 'ready'
+        // Signal 'portThreadStart'
         QtMocHelpers::SignalData<void()>(5, 2, QMC::AccessPublic, QMetaType::Void),
         // Signal 'finished'
         QtMocHelpers::SignalData<void()>(6, 2, QMC::AccessPublic, QMetaType::Void),
@@ -83,7 +83,7 @@ void RouterWorker::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id
     if (_c == QMetaObject::InvokeMetaMethod) {
         switch (_id) {
         case 0: _t->routerProgress((*reinterpret_cast<std::add_pointer_t<Router*>>(_a[1]))); break;
-        case 1: _t->ready(); break;
+        case 1: _t->portThreadStart(); break;
         case 2: _t->finished(); break;
         case 3: _t->routerProcess(); break;
         default: ;
@@ -92,7 +92,7 @@ void RouterWorker::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id
     if (_c == QMetaObject::IndexOfMethod) {
         if (QtMocHelpers::indexOfMethod<void (RouterWorker::*)(Router * )>(_a, &RouterWorker::routerProgress, 0))
             return;
-        if (QtMocHelpers::indexOfMethod<void (RouterWorker::*)()>(_a, &RouterWorker::ready, 1))
+        if (QtMocHelpers::indexOfMethod<void (RouterWorker::*)()>(_a, &RouterWorker::portThreadStart, 1))
             return;
         if (QtMocHelpers::indexOfMethod<void (RouterWorker::*)()>(_a, &RouterWorker::finished, 2))
             return;
@@ -137,7 +137,7 @@ void RouterWorker::routerProgress(Router * _t1)
 }
 
 // SIGNAL 1
-void RouterWorker::ready()
+void RouterWorker::portThreadStart()
 {
     QMetaObject::activate(this, &staticMetaObject, 1, nullptr);
 }

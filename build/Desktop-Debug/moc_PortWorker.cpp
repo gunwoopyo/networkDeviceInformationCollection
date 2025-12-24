@@ -48,7 +48,7 @@ template <> constexpr inline auto PortWorker::qt_create_metaobjectdata<qt_meta_t
         "port",
         "portViewProgress",
         "portProcess",
-        "stop"
+        "portTimerStop"
     };
 
     QtMocHelpers::UintData qt_methods {
@@ -66,7 +66,7 @@ template <> constexpr inline auto PortWorker::qt_create_metaobjectdata<qt_meta_t
         }}),
         // Slot 'portProcess'
         QtMocHelpers::SlotData<void()>(9, 2, QMC::AccessPublic, QMetaType::Void),
-        // Slot 'stop'
+        // Slot 'portTimerStop'
         QtMocHelpers::SlotData<void()>(10, 2, QMC::AccessPublic, QMetaType::Void),
     };
     QtMocHelpers::UintData qt_properties {
@@ -95,7 +95,7 @@ void PortWorker::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 1: _t->portInfoProgress((*reinterpret_cast<std::add_pointer_t<Port*>>(_a[1]))); break;
         case 2: _t->portViewProgress((*reinterpret_cast<std::add_pointer_t<Router*>>(_a[1]))); break;
         case 3: _t->portProcess(); break;
-        case 4: _t->stop(); break;
+        case 4: _t->portTimerStop(); break;
         default: ;
         }
     }

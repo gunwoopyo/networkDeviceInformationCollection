@@ -1,10 +1,8 @@
 #ifndef ROUTERWORKER_H
 #define ROUTERWORKER_H
-
 #include <QObject>
-
-
 #include "Router.h"
+
 class Router;
 
 class RouterWorker : public QObject {
@@ -12,15 +10,14 @@ class RouterWorker : public QObject {
 
 public:
     explicit RouterWorker(QObject* parent = nullptr)
-        : QObject(parent) {
-    }
+        : QObject(parent) { }
+
 public slots:
     void routerProcess();
 
 signals:
     void routerProgress(Router* router);
-
-    void ready();
+    void portThreadStart();
     void finished();
 };
 

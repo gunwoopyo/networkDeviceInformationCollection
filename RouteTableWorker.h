@@ -1,6 +1,5 @@
 #ifndef ROUTETABLEWORKER_H
 #define ROUTETABLEWORKER_H
-
 #include <QObject>
 
 class RouteTable;
@@ -16,10 +15,8 @@ public slots:
     void routeTableProcess();
 
 signals:
-    void routeTableProgress(RouteTable* r);
+    void routeTableProgress(RouteTable* table);
     void finished();
-
-
 };
 
 

@@ -1,14 +1,13 @@
 #ifndef ROUTETABLEENTRY_H
 #define ROUTETABLEENTRY_H
-
 #include <QString>
 
 class RouteTableEntry {
 public:
-    int inIndex;
-    QString destIPAddress;
-    QString subnetMask;
-    QString nextHop;
+    int ifIndex = 0;
+    QString destIPAddress = "";
+    QString subnetMask = "";
+    QString nextHop = "";
 };
 
 

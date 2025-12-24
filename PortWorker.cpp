@@ -1,25 +1,28 @@
-#include "RouterWorker.h"
 #include "PortWorker.h"
-
-
+#include "Router.h"
 
 void PortWorker::portProcess() {
-    Router* router = Router::routerPtr;
 
-    for(Port &port : router->ports) {
-        port.fetchPortInfo(); //portAdminStatus, portOperStatus, MAC 주소
-        emit portViewProgress(router);  // by portOperStatus
-
-
-        port.fetchTrafficInfo();  //inOctet, outOctet
-        port.calculateBPSPPS();   //BPS,PPS,부하 계산
+    for(Port &port : Router::routerPtr->ports) {
+        port.fetchPortInfo();
+        emit portViewProgress(Router::routerPtr);
         emit portInfoProgress(&port);
 
-        port.calculateLoadStatus();
 
+        if (secondRead == true)
+            port.calculateBPSPPS();
+
+        if (thirdRead == true)
+            port.calculateLoadStatus();
     }
+    emit loadInfoProgress(Router::routerPtr);
 
-    emit loadInfoProgress(router);
+    if (secondRead == true)
+        thirdRead = true;
+
+    if (secondRead == false)
+        secondRead = true;
+
     timer->singleShot(5000, this, &PortWorker::portProcess);
 }
 

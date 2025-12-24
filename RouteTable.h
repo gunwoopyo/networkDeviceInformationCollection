@@ -9,7 +9,6 @@ public:
     QVector<RouteTableEntry> routeTable;
 
     void fetchRouteTableInfo();
-
 };
 
 

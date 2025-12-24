@@ -1,10 +1,11 @@
-#include <QMainWindow>
 #include <QMessageBox>
+#include <QSqlDatabase>
+#include <QSqlQuery>
+#include <QSqlError>
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "RouterWorker.h"
 #include "DeviceInfoWorker.h"
-
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -47,71 +48,44 @@ MainWindow::MainWindow(QWidget *parent)
 
 
 
-
 MainWindow::~MainWindow() {
-    portWorker->stop(); // 타이머 멈춤
+    portWorker->portTimerStop(); // 타이머 멈춤
     portThread->quit();
     portThread->wait();
     delete portWorker;
     delete portThread;
-    onPortThreadFinished();
-
-    // routerThread->quit();
-    // routerThread->wait();
-    // delete routerWorker;
-    // delete routerThread;
-    // onRouterThreadFinished();
 
     delete Router::routerPtr;
     delete ui;
-
 }
+
+
+
 
 void MainWindow::startMyThread() {
     routerWorker = new RouterWorker();
     routerThread = new QThread;
     routerWorker->moveToThread(routerThread);
     routerThread->start();
-    QObject::connect(routerThread, &QThread::started, this, &MainWindow::onRouterThreadStarted);
+
     QObject::connect(routerThread, &QThread::started, routerWorker, &RouterWorker::routerProcess);
     QObject::connect(routerWorker, &RouterWorker::routerProgress, this, &MainWindow::showRouterInfo);
     QObject::connect(routerWorker, &RouterWorker::finished, routerThread, &QThread::quit);
     QObject::connect(routerThread, &QThread::finished, routerWorker, &QObject::deleteLater);
     QObject::connect(routerThread, &QThread::finished, routerThread, &QObject::deleteLater);
-    QObject::connect(routerWorker, &RouterWorker::finished, this, &MainWindow::onRouterThreadFinished);
-
-
 
 
     portWorker = new PortWorker();
     portThread = new QThread();
     portWorker->moveToThread(portThread);
-    QObject::connect(portThread, &QThread::started, this, &MainWindow::onPortThreadStarted);
     QObject::connect(portThread, &QThread::started, portWorker, &PortWorker::portProcess);
     QObject::connect(portWorker, &PortWorker::portViewProgress, this, &MainWindow::showPortView);
     QObject::connect(portWorker, &PortWorker::portInfoProgress, this, &MainWindow::showPortInfo);
     QObject::connect(portWorker, &PortWorker::loadInfoProgress, this, &MainWindow::showLoadInfo);
-    QObject::connect(routerWorker, &RouterWorker::ready, portThread, [=]() {
+    QObject::connect(routerWorker, &RouterWorker::portThreadStart, portThread, [=]() {
         portThread->start();
     });
-
 }
-
-void MainWindow::onRouterThreadStarted() {
-    qDebug() << "#1 라우터 스레드 시작";
-}
-void MainWindow::onRouterThreadFinished() {
-    qDebug() << "#1 라우터 스레드 종료";
-}
-void MainWindow::onPortThreadStarted() {
-    qDebug() << "#2 포트 스레드 시작";
-}
-void MainWindow::onPortThreadFinished() {
-    qDebug() << "#2 포트 스레드 종료";
-}
-
-
-
 
 
 
@@ -122,9 +96,10 @@ void MainWindow::showPortView(Router* router) {
 
         if(router->ports[i-1].portOperStatus == 1) {
             frame->setStyleSheet("background-color: green;");
-        }
-        else
+        } else {
             frame->setStyleSheet("background-color: gray;");
+        }
+
         QLabel* label = this->findChild<QLabel*>(QString("port%1Text").arg(i));
         label->setText(router->ports[i-1].portName);
     }
@@ -132,26 +107,22 @@ void MainWindow::showPortView(Router* router) {
 
 
 
+
+// 부하 정보
 void MainWindow::showLoadInfo(Router* router) {
-    int runningCount = 0;
-    int normalCount = 0;
-    int warningCount = 0;
-    int dangerCount = 0;
+    int runningCount = 0, normalCount = 0, warningCount = 0, dangerCount = 0;
 
     for(Port& port : router->ports) {
         if(port.portOperStatus == 1)
             runningCount++;
-
-        if(port.trafficBuffer.last().loadStatus == "normal") {
-            normalCount++;
-        }
-        else if(port.trafficBuffer.last().loadStatus == "warning") {
+        if (port.trafficBuffer.last().loadStatus == "warning")
             warningCount++;
-        }
-        else if(port.trafficBuffer.last().loadStatus == "danger") {
+        else if(port.trafficBuffer.last().loadStatus == "danger")
             dangerCount++;
-        }
     }
+
+    normalCount = runningCount - (warningCount + dangerCount);
+
     ui->loadTotalText->setText(QString::number(runningCount));
     ui->loadNormalText->setText(QString::number(normalCount));
     ui->loadWarningText->setText(QString::number(warningCount));
@@ -159,23 +130,73 @@ void MainWindow::showLoadInfo(Router* router) {
 }
 
 
-void MainWindow::showRouterInfo(Router* routerInfo) {
-    ui->routerTable->setRowCount(1);
-    ui->routerTable->setItem(0, 0, new QTableWidgetItem(routerInfo->routerName));
-    ui->routerTable->setItem(0, 1, new QTableWidgetItem(routerInfo->routerIP));
-    ui->routerTable->setItem(0, 2, new QTableWidgetItem(QString::number(routerInfo->cpu) + "%"));
-    ui->routerTable->setItem(0, 3, new QTableWidgetItem(QString::number(routerInfo->memory, 'f', 1) + "%"));
 
-    int seconds = routerInfo->time / 100;
-    int day = seconds / 86400;
-    int hour = (seconds % 86400) / 3600;
-    ui->routerTable->setItem(0, 4, new QTableWidgetItem(QString::number(day) + "일" + QString::number(hour) + "시간"));
+
+void MainWindow::showRouterInfo(Router* router) {
+    enum Column { NameColumn, IPColumn, CPUColumn, MemoryColumn, TimeColumn };
+
+    int seconds = router->runningTime/100;
+    QString timeStr = QString("%1일 %2시간").arg(seconds / 86400).arg((seconds % 86400) / 3600);
+
+    ui->routerTable->setRowCount(1);
+    int currentRow = 0;
+    ui->routerTable->setItem(currentRow, NameColumn,   new QTableWidgetItem(router->routerName));
+    ui->routerTable->setItem(currentRow, IPColumn,     new QTableWidgetItem(router->routerIP));
+    ui->routerTable->setItem(currentRow, CPUColumn,    new QTableWidgetItem(QString::number(router->cpu) + "%"));
+    ui->routerTable->setItem(currentRow, MemoryColumn, new QTableWidgetItem(QString::number(router->memory, 'f', 1) + "%"));
+    ui->routerTable->setItem(currentRow, TimeColumn,   new QTableWidgetItem(timeStr));
+
+    QSqlQuery query;
+    query.prepare("INSERT INTO Router_State (router_name, ipAddress, cpu, memory, running_time) "
+                  "VALUES (:name, :ip, :cpu, :memory, :time)");
+    query.bindValue(":name",   router->routerName);
+    query.bindValue(":ip",     router->routerIP);
+    query.bindValue(":cpu",    router->cpu);
+    query.bindValue(":memory", router->memory);
+    query.bindValue(":time",   router->runningTime);
+
+    if(!query.exec()) qDebug() << "Insert Failed:" << query.lastError().text();
 }
 
 
 
 
+
+
+
+
+
+
+QString MainWindow::formatBps(double bps) {
+    static const char* units[] = {"bps", "Kbps", "Mbps", "Gbps"};
+    int unitIndex = 0;
+
+    for ( ; bps >= 1000 && unitIndex < (int)std::size(units) - 1; unitIndex++) {
+        bps /= 1000;
+    }
+
+    return QString::number(bps, 'f', 1) + units[unitIndex];
+}
+
+QString MainWindow::getStatusText(int status, QString text) {
+    if (text == "admin") {
+        if (status == 1) return "On";
+        if (status == 2) return "Off";
+        if (status == 3) return "Testing";
+    } else {
+        if (status == 1) return "Running";
+        if (status == 2) return "Not Running";
+        if (status == 3) return "테스트 중";
+    }
+    return "unknown";
+}
+
+
+
 void MainWindow::showPortInfo(Port* port) {
+    enum Column { IndexColumn, NameColumn, AdminColumn, OperColumn, MacColumn,
+                  InBPSColumn, OutBPSColumn, InPPSColumn, OutPPSColumn };
+
     static QMap<QString,int> portRows;
     int row = portRows.value(port->portName, -1);
     if(row == -1) {
@@ -183,72 +204,32 @@ void MainWindow::showPortInfo(Port* port) {
         ui->interfaceTable->insertRow(row);
         portRows[port->portName] = row;
     }
-    ui->interfaceTable->setItem(row, 0, new QTableWidgetItem(QString::number(port->ifIndex)));
-    ui->interfaceTable->setItem(row, 1, new QTableWidgetItem(port->portName));
+    ui->interfaceTable->setItem(row, IndexColumn, new QTableWidgetItem(QString::number(port->ifIndex)));
+    ui->interfaceTable->setItem(row, NameColumn,  new QTableWidgetItem(port->portName));
+    ui->interfaceTable->setItem(row, AdminColumn, new QTableWidgetItem(getStatusText(port->portAdminStatus, "admin")));
+    ui->interfaceTable->setItem(row, OperColumn,  new QTableWidgetItem(getStatusText(port->portOperStatus,  "oper")));
+    ui->interfaceTable->setItem(row, MacColumn,   new QTableWidgetItem(port->macAddress));
 
+    Traffic traffic = port->trafficBuffer.last();
+    ui->interfaceTable->setItem(row, InBPSColumn,  new QTableWidgetItem(formatBps(traffic.InBPS)));
+    ui->interfaceTable->setItem(row, OutBPSColumn, new QTableWidgetItem(formatBps(traffic.OutBps)));
+    ui->interfaceTable->setItem(row, InPPSColumn,  new QTableWidgetItem(QString::number(traffic.InPPS)));
+    ui->interfaceTable->setItem(row, OutPPSColumn, new QTableWidgetItem(QString::number(traffic.OutPPS)));
 
-    QString adminText;
-    switch (port->portAdminStatus) {
-        case 1: adminText = "On";
-            break;
-        case 2: adminText = "Off";
-            break;
-        case 3: adminText = "Testing";
-            break;
-        default: adminText = "Unknown";
-            break;
-    }
-    ui->interfaceTable->setItem(row, 2, new QTableWidgetItem(adminText));
+    QSqlQuery query;
+    query.prepare("INSERT INTO Router_Port "
+                "(router_name, port_number, port_name, admin_status, oper_status, mac_address, in_bps, out_bps) "
+                "VALUES (:routerName, :portNumber, :portName, :adminStatus, :operStatus, :macAddress, :inBps, :outBps)");
+    query.bindValue(":routerName",  Router::routerPtr->routerName);
+    query.bindValue(":portNumber",  port->ifIndex);
+    query.bindValue(":portName",    port->portName);
+    query.bindValue(":adminStatus", port->portAdminStatus);
+    query.bindValue(":operStatus",  port->portOperStatus);
+    query.bindValue(":macAddress",  port->macAddress);
+    query.bindValue(":inBps",       port->trafficBuffer.last().InBPS);
+    query.bindValue(":outBps",      port->trafficBuffer.last().OutBps);
 
-
-    QString operText;
-    switch (port->portOperStatus) {
-        case 1: operText = "Running";
-            break;
-        case 2: operText = "Not Running";
-            break;
-        case 3: operText = "테스트 중";
-            break;
-        default: operText = "Unknown";
-            break;
-    }
-    ui->interfaceTable->setItem(row, 3, new QTableWidgetItem(operText));
-
-    ui->interfaceTable->setItem(row, 4, new QTableWidgetItem(port->macAddress));
-
-    if(!port->trafficBuffer.isEmpty()) {
-        Traffic traffic = port->trafficBuffer.last();
-
-        double inBpsValue = traffic.InBPS;
-        QString unit = "bps";
-
-        if (inBpsValue >= 1e9) {
-            inBpsValue /= 1e9;
-            unit = "Gbps";
-        } else if (inBpsValue >= 1e6) {
-            inBpsValue /= 1e6;
-            unit = "Mbps";
-        } else if (inBpsValue >= 1e3) {
-            inBpsValue /= 1e3;
-            unit = "Kbps";
-        }
-        ui->interfaceTable->setItem(row, 5, new QTableWidgetItem(QString::number(inBpsValue, 'f', 2) + unit));
-
-        double outBpsValue = traffic.OutBps;
-        if (outBpsValue >= 1e9) {
-            outBpsValue /= 1e9;
-            unit = "Gbps";
-        } else if (outBpsValue >= 1e6) {
-            outBpsValue /= 1e6;
-            unit = "Mbps";
-        } else if (outBpsValue >= 1e3) {
-            outBpsValue /= 1e3;
-            unit = "Kbps";
-        }
-        ui->interfaceTable->setItem(row, 6, new QTableWidgetItem(QString::number(outBpsValue, 'f', 2) + unit));
-        ui->interfaceTable->setItem(row, 7, new QTableWidgetItem(QString::number(traffic.InPPS)));
-        ui->interfaceTable->setItem(row, 8, new QTableWidgetItem(QString::number(traffic.OutPPS)));
-    }
+    if(!query.exec()) qDebug() << "Insert Failed:" << query.lastError().text();
 }
 
 

@@ -49,10 +49,11 @@ template <> constexpr inline auto MainWindow::qt_create_metaobjectdata<qt_meta_t
         "portInfo",
         "showLoadInfo",
         "showPortView",
-        "onRouterThreadStarted",
-        "onRouterThreadFinished",
-        "onPortThreadStarted",
-        "onPortThreadFinished"
+        "getStatusText",
+        "status",
+        "text",
+        "formatBps",
+        "bps"
     };
 
     QtMocHelpers::UintData qt_methods {
@@ -74,14 +75,14 @@ template <> constexpr inline auto MainWindow::qt_create_metaobjectdata<qt_meta_t
         QtMocHelpers::SlotData<void(Router *)>(10, 2, QMC::AccessPublic, QMetaType::Void, {{
             { 0x80000000 | 4, 5 },
         }}),
-        // Slot 'onRouterThreadStarted'
-        QtMocHelpers::SlotData<void()>(11, 2, QMC::AccessPublic, QMetaType::Void),
-        // Slot 'onRouterThreadFinished'
-        QtMocHelpers::SlotData<void()>(12, 2, QMC::AccessPublic, QMetaType::Void),
-        // Slot 'onPortThreadStarted'
-        QtMocHelpers::SlotData<void()>(13, 2, QMC::AccessPublic, QMetaType::Void),
-        // Slot 'onPortThreadFinished'
-        QtMocHelpers::SlotData<void()>(14, 2, QMC::AccessPublic, QMetaType::Void),
+        // Slot 'getStatusText'
+        QtMocHelpers::SlotData<QString(int, QString)>(11, 2, QMC::AccessPublic, QMetaType::QString, {{
+            { QMetaType::Int, 12 }, { QMetaType::QString, 13 },
+        }}),
+        // Slot 'formatBps'
+        QtMocHelpers::SlotData<QString(double)>(14, 2, QMC::AccessPublic, QMetaType::QString, {{
+            { QMetaType::Double, 15 },
+        }}),
     };
     QtMocHelpers::UintData qt_properties {
     };
@@ -110,10 +111,10 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 2: _t->showPortInfo((*reinterpret_cast<std::add_pointer_t<Port*>>(_a[1]))); break;
         case 3: _t->showLoadInfo((*reinterpret_cast<std::add_pointer_t<Router*>>(_a[1]))); break;
         case 4: _t->showPortView((*reinterpret_cast<std::add_pointer_t<Router*>>(_a[1]))); break;
-        case 5: _t->onRouterThreadStarted(); break;
-        case 6: _t->onRouterThreadFinished(); break;
-        case 7: _t->onPortThreadStarted(); break;
-        case 8: _t->onPortThreadFinished(); break;
+        case 5: { QString _r = _t->getStatusText((*reinterpret_cast<std::add_pointer_t<int>>(_a[1])),(*reinterpret_cast<std::add_pointer_t<QString>>(_a[2])));
+            if (_a[0]) *reinterpret_cast<QString*>(_a[0]) = std::move(_r); }  break;
+        case 6: { QString _r = _t->formatBps((*reinterpret_cast<std::add_pointer_t<double>>(_a[1])));
+            if (_a[0]) *reinterpret_cast<QString*>(_a[0]) = std::move(_r); }  break;
         default: ;
         }
     }
@@ -138,14 +139,14 @@ int MainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 9)
+        if (_id < 7)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 9;
+        _id -= 7;
     }
     if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 9)
+        if (_id < 7)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 9;
+        _id -= 7;
     }
     return _id;
 }

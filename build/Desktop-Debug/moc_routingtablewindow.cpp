@@ -39,22 +39,16 @@ template <> constexpr inline auto RoutingTableWindow::qt_create_metaobjectdata<q
     namespace QMC = QtMocConstants;
     QtMocHelpers::StringRefStorage qt_stringData {
         "RoutingTableWindow",
-        "onRouteTableThreadStarted",
-        "",
-        "onRouteTableThreadFinished",
         "showRouteTableInfo",
+        "",
         "RouteTable*",
         "table"
     };
 
     QtMocHelpers::UintData qt_methods {
-        // Slot 'onRouteTableThreadStarted'
-        QtMocHelpers::SlotData<void()>(1, 2, QMC::AccessPublic, QMetaType::Void),
-        // Slot 'onRouteTableThreadFinished'
-        QtMocHelpers::SlotData<void()>(3, 2, QMC::AccessPublic, QMetaType::Void),
         // Slot 'showRouteTableInfo'
-        QtMocHelpers::SlotData<void(RouteTable *)>(4, 2, QMC::AccessPublic, QMetaType::Void, {{
-            { 0x80000000 | 5, 6 },
+        QtMocHelpers::SlotData<void(RouteTable *)>(1, 2, QMC::AccessPublic, QMetaType::Void, {{
+            { 0x80000000 | 3, 4 },
         }}),
     };
     QtMocHelpers::UintData qt_properties {
@@ -79,9 +73,7 @@ void RoutingTableWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, i
     auto *_t = static_cast<RoutingTableWindow *>(_o);
     if (_c == QMetaObject::InvokeMetaMethod) {
         switch (_id) {
-        case 0: _t->onRouteTableThreadStarted(); break;
-        case 1: _t->onRouteTableThreadFinished(); break;
-        case 2: _t->showRouteTableInfo((*reinterpret_cast<std::add_pointer_t<RouteTable*>>(_a[1]))); break;
+        case 0: _t->showRouteTableInfo((*reinterpret_cast<std::add_pointer_t<RouteTable*>>(_a[1]))); break;
         default: ;
         }
     }
@@ -106,14 +98,14 @@ int RoutingTableWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 3)
+        if (_id < 1)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 3;
+        _id -= 1;
     }
     if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 3)
+        if (_id < 1)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 3;
+        _id -= 1;
     }
     return _id;
 }
