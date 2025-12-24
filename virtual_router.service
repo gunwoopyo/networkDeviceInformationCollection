@@ -1,0 +1,14 @@
+[Unit]
+Description=Setup Virtual Router
+After=network.target
+Wants=network.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/sbin/virtual_router.sh
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
+
+
