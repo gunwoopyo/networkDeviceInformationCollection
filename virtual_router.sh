@@ -1,6 +1,6 @@
 #!/bin/bash
-NETNS_NAME="router"
 sudo systemctl stop snmpd 2>/dev/null || true
+NETNS_NAME="router"
 ip netns del ${NETNS_NAME} 2>/dev/null || true
 ip netns add ${NETNS_NAME}
 START_SUBNET=101
