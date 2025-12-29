@@ -5,9 +5,9 @@ void ArpTable::fetchArpTableInfo() {
     Router* router = Router::routerPtr;
     snmp_session *ss = Router::openSnmpSession(router->routerIP, router->routerCommunity);
 
-    if(!Router::snmpSessionValid(ss)) {
+    if(!Router::snmpSessionValid(ss))
         return;
-    }
+
 
     oid macOID[] = {1,3,6,1,2,1,4,22,1,2};
     size_t macOIDLen = OID_LENGTH(macOID);
@@ -61,8 +61,6 @@ void ArpTable::fetchArpTableInfo() {
         portEntry.type = *(typeResponse->variables->val.integer);
         portEntry.macAddress = macParts.join(":");
         arpTable.append(portEntry);
-
-
 
         memcpy(currentMacOID, macResponse->variables->name, macResponse->variables->name_length * sizeof(oid));
         currentMacOIDLen = macResponse->variables->name_length;

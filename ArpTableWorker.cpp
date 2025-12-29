@@ -1,7 +1,5 @@
-#include <QDebug>
 #include "ArpTable.h"
 #include "ArpTableWorker.h"
-
 
 class ArpTable;
 

@@ -2,6 +2,7 @@
 #define ARPTABLE_H
 #include <QVector>
 #include "ArpTableEntry.h"
+
 class ArpTable {
 public:
     QVector<ArpTableEntry> arpTable;

@@ -18,9 +18,13 @@ RegisterDeviceWindow::~RegisterDeviceWindow() {
 }
 
 
+
+
 void RegisterDeviceWindow::on_startPushButton_clicked() {
     enum Column { IpColumn, CommuColumn };
+
     QTableWidgetItem* selectedItem = ui->routerListTable->currentItem();
+
     if(!selectedItem) {
         QMessageBox::warning(this, "실패", "장비를 선택해주세요  ");
         return;
@@ -48,7 +52,7 @@ void RegisterDeviceWindow::on_registPushButton_clicked() {
     query.bindValue(":ip", ipAddress);
     query.bindValue(":commu", community);
 
-    if(query.exec()) {
+    if (query.exec()) {
         QMessageBox::information(this, "등록 완료", "라우터가 등록되었습니다.");
         routerListTable();
     }

@@ -51,6 +51,7 @@ void ArpTableWindow::on_searchPushButton_clicked() {
     QObject::connect(arpTableThread, &QThread::finished, arpTableThread, &QObject::deleteLater);
 }
 
+
 // ArpTable
 void ArpTableWindow::showArpTable(ArpTable* table) {
     enum Column { ifIndexColumn, ipAddressColumn, macColumn, typeColumn };
@@ -58,13 +59,10 @@ void ArpTableWindow::showArpTable(ArpTable* table) {
     QString portNumberText = ui->portNumberComboBox->currentText();
 
 
-
     for(ArpTableEntry& entry : table->arpTable) {
         QString index = QString::number(entry.ifIndex);
-
-        if (ui->portNumberComboBox->findText(index) == -1) {  // 콤보박스에 인터페이스 번호 없으면 추가
+        if (ui->portNumberComboBox->findText(index) == -1)  // 콤보박스에 인터페이스 번호 없으면 추가
             ui->portNumberComboBox->addItem(index);
-        }
 
         if(portNumberText.isEmpty() || portNumberText == index) {
             int row = ui->arpTable->rowCount();
@@ -74,8 +72,6 @@ void ArpTableWindow::showArpTable(ArpTable* table) {
             ui->arpTable->setItem(row, macColumn, new QTableWidgetItem(entry.macAddress));
             ui->arpTable->setItem(row, typeColumn, new QTableWidgetItem(QString::number(entry.type)));
         }
-
-
         QSqlQuery query;
         query.prepare("INSERT INTO ARP_Table (routerName, portNumber, ipAddress, macAddress, type) "
                       "VALUES (:name, :number, :ip, :mac, :type)");
@@ -87,8 +83,6 @@ void ArpTableWindow::showArpTable(ArpTable* table) {
         if(!query.exec())
             qDebug() << "Insert Failed:" << query.lastError().text();
     }
-
-
     ui->portNumberComboBox->setCurrentIndex(0);
     delete table;
 }

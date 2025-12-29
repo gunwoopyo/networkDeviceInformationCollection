@@ -7,6 +7,9 @@ RoutingTableWindow::~RoutingTableWindow() {
     delete ui;
 }
 
+
+
+
 RoutingTableWindow::RoutingTableWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::RoutingTableWindow) {
@@ -22,6 +25,8 @@ RoutingTableWindow::RoutingTableWindow(QWidget *parent)
     QObject::connect(routeTableThread, &QThread::finished, routeTableWorker, &QObject::deleteLater);
     QObject::connect(routeTableThread, &QThread::finished, routeTableThread, &QObject::deleteLater);
 }
+
+
 
 
 void RoutingTableWindow::showRouteTableInfo(RouteTable* table) {

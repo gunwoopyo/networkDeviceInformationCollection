@@ -29,6 +29,8 @@ public:
     static snmp_session* openSnmpSession(QString ip, QString community);
     static bool snmpSessionValid(netsnmp_session *ss);
     static void saveErrorLog(const QString& type, const QString& msg, const QString& oid);
+
+
 };
 
 

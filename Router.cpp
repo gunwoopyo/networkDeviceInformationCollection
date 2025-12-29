@@ -8,16 +8,27 @@
 Router* Router::routerPtr = nullptr;
 
 
-QString Router::getSnmpString(netsnmp_session* ss, const oid* oidArr, size_t oidLen) {
+
+
+
+
+
+
+
+
+
+
+
+QString Router::getSnmpString(netsnmp_session* session, const oid* oidArr, size_t oidLen) {
 
     netsnmp_pdu* pdu = snmp_pdu_create(SNMP_MSG_GET);
     snmp_add_null_var(pdu, const_cast<oid*>(oidArr), oidLen);
     netsnmp_pdu* response = nullptr;
 
-    int status = snmp_synch_response(ss, pdu, &response);
+    int status = snmp_synch_response(session, pdu, &response);
     if (status != STAT_SUCCESS) {
         fprintf(stderr, "SNMP GET (String) failed due to communication error. Status: %d\n", status);
-        snmp_sess_perror("snmp_synch_response failed", ss);
+        snmp_sess_perror("snmp_synch_response failed", session);
 
         if (response) {
             snmp_free_pdu(response);
@@ -61,8 +72,8 @@ QString Router::getSnmpString(netsnmp_session* ss, const oid* oidArr, size_t oid
 
 
 
-bool Router::snmpSessionValid(netsnmp_session* ss) {
-    if (ss == nullptr) {
+bool Router::snmpSessionValid(netsnmp_session* session) {
+    if (session == nullptr) {
         qDebug() << "SNMP session open failed!";
         return false;
     }
@@ -82,12 +93,18 @@ snmp_session* Router::openSnmpSession(QString ip, QString community) {
     snmp_session *ss = snmp_open(&session);
 
     if (!ss) {
-        snmp_sess_perror("snmp_open failed", &session);
+        snmp_sess_perror("snmp_open failed", ss);
         return nullptr;
     }
-
     return ss;
 }
+
+
+
+
+
+
+
 
 
 
@@ -200,9 +217,9 @@ quint32 Router::getSnmpInteger(netsnmp_session* ss, const oid* oidArr, size_t oi
 
 
 void Router::fetchRouterInfo() {
-    snmp_session *ss = openSnmpSession(routerIP, routerCommunity);
+    snmp_session *session = openSnmpSession(routerIP, routerCommunity);
 
-    if(!snmpSessionValid(ss))
+    if(!snmpSessionValid(session))
         return;
 
     oid sysNameOID[] = {1,3,6,1,2,1,1,5,0};
@@ -211,16 +228,16 @@ void Router::fetchRouterInfo() {
     oid usedMemoryOID[] = {1,3,6,1,4,1,9,9,48,1,1,1,5,1};
     oid freeMemoryOID[] = {1,3,6,1,4,1,9,9,48,1,1,1,6,1};
 
-    routerName = getSnmpString(ss, sysNameOID, OID_LENGTH(sysNameOID));
-    cpu = getSnmpInteger(ss, cpuOID, OID_LENGTH(cpuOID));
-    runningTime = getSnmpInteger(ss, timeOID, OID_LENGTH(timeOID));
-    quint32 usedMemory = getSnmpInteger(ss, usedMemoryOID, OID_LENGTH(usedMemoryOID));
-    quint32 freeMemory = getSnmpInteger(ss, freeMemoryOID, OID_LENGTH(freeMemoryOID));
+    routerName = getSnmpString(session, sysNameOID, OID_LENGTH(sysNameOID));
+    runningTime = getSnmpInteger(session, timeOID, OID_LENGTH(timeOID));
+    cpu = getSnmpInteger(session, cpuOID, OID_LENGTH(cpuOID));
+    quint32 usedMemory = getSnmpInteger(session, usedMemoryOID, OID_LENGTH(usedMemoryOID));
+    quint32 freeMemory = getSnmpInteger(session, freeMemoryOID, OID_LENGTH(freeMemoryOID));
 
     if (!(usedMemory + freeMemory) == 0)
         memory = (double)(usedMemory * 100.0) / (double)(usedMemory + freeMemory);
 
-    snmp_close(ss);
+    snmp_close(session);
     SOCK_CLEANUP;
 }
 
@@ -234,9 +251,9 @@ void Router::fetchRouterInfo() {
 
 
 void Router::createPort() {
-    snmp_session *ss = openSnmpSession(routerIP, routerCommunity);
+    snmp_session *session = openSnmpSession(routerIP, routerCommunity);
 
-    if(!snmpSessionValid(ss)) {
+    if(!snmpSessionValid(session)) {
         return;
     }
 
@@ -252,7 +269,7 @@ void Router::createPort() {
         snmp_add_null_var(pdu, currentOID, currentOIDLength);
         netsnmp_pdu* response = nullptr;
 
-        int status = snmp_synch_response(ss, pdu, &response);
+        int status = snmp_synch_response(session, pdu, &response);
 
         if (status != STAT_SUCCESS || !response || response->errstat != SNMP_ERR_NOERROR) {
             if (response != nullptr) {
@@ -279,7 +296,7 @@ void Router::createPort() {
         snmp_free_pdu(response);
     }
 
-    snmp_close(ss);
+    snmp_close(session);
     SOCK_CLEANUP;
 }
 

@@ -20,7 +20,7 @@ MainWindow::MainWindow(QWidget *parent)
     QPoint topLeft = center - QPoint(dlgSize.width()/2, dlgSize.height()/2);
     registerDeviceWindow->move(topLeft);
     registerDeviceWindow->show();
-    connect(registerDeviceWindow, &RegisterDeviceWindow::startThreadRequested, this, &MainWindow::startMyThread);
+    connect(registerDeviceWindow, &RegisterDeviceWindow::startThreadRequested, this, &MainWindow::startThread);
 
     // arp 테이블
     connect(ui->arpTablePushButton, &QPushButton::clicked, this, [this]() {
@@ -62,12 +62,11 @@ MainWindow::~MainWindow() {
 
 
 
-void MainWindow::startMyThread() {
+void MainWindow::startThread() {
     routerWorker = new RouterWorker();
     routerThread = new QThread;
     routerWorker->moveToThread(routerThread);
     routerThread->start();
-
     QObject::connect(routerThread, &QThread::started, routerWorker, &RouterWorker::routerProcess);
     QObject::connect(routerWorker, &RouterWorker::routerProgress, this, &MainWindow::showRouterInfo);
     QObject::connect(routerWorker, &RouterWorker::finished, routerThread, &QThread::quit);
@@ -90,6 +89,8 @@ void MainWindow::startMyThread() {
 
 
 
+
+
 void MainWindow::showPortView(Router* router) {
     for(int i = 1; i <= router->ports.size(); i++) {
         QFrame* frame = this->findChild<QFrame*>(QString("port%1Frame").arg(i));
@@ -108,11 +109,14 @@ void MainWindow::showPortView(Router* router) {
 
 
 
+
+
+
 // 부하 정보
 void MainWindow::showLoadInfo(Router* router) {
     int runningCount = 0, normalCount = 0, warningCount = 0, dangerCount = 0;
 
-    for(Port& port : router->ports) {
+    for (Port& port : router->ports) {
         if(port.portOperStatus == 1)
             runningCount++;
         if (port.trafficBuffer.last().loadStatus == "warning")
@@ -120,7 +124,6 @@ void MainWindow::showLoadInfo(Router* router) {
         else if(port.trafficBuffer.last().loadStatus == "danger")
             dangerCount++;
     }
-
     normalCount = runningCount - (warningCount + dangerCount);
 
     ui->loadTotalText->setText(QString::number(runningCount));
@@ -128,6 +131,7 @@ void MainWindow::showLoadInfo(Router* router) {
     ui->loadWarningText->setText(QString::number(warningCount));
     ui->loadDangerText->setText(QString::number(dangerCount));
 }
+
 
 
 
@@ -166,17 +170,19 @@ void MainWindow::showRouterInfo(Router* router) {
 
 
 
-
 QString MainWindow::formatBps(double bps) {
     static const char* units[] = {"bps", "Kbps", "Mbps", "Gbps"};
     int unitIndex = 0;
 
     for ( ; bps >= 1000 && unitIndex < (int)std::size(units) - 1; unitIndex++) {
         bps /= 1000;
-    }
 
+    }
     return QString::number(bps, 'f', 1) + units[unitIndex];
 }
+
+
+
 
 QString MainWindow::getStatusText(int status, QString text) {
     if (text == "admin") {
@@ -190,6 +196,7 @@ QString MainWindow::getStatusText(int status, QString text) {
     }
     return "unknown";
 }
+
 
 
 
@@ -216,10 +223,12 @@ void MainWindow::showPortInfo(Port* port) {
     ui->interfaceTable->setItem(row, InPPSColumn,  new QTableWidgetItem(QString::number(traffic.InPPS)));
     ui->interfaceTable->setItem(row, OutPPSColumn, new QTableWidgetItem(QString::number(traffic.OutPPS)));
 
+
     QSqlQuery query;
     query.prepare("INSERT INTO Router_Port "
-                "(router_name, port_number, port_name, admin_status, oper_status, mac_address, in_bps, out_bps) "
-                "VALUES (:routerName, :portNumber, :portName, :adminStatus, :operStatus, :macAddress, :inBps, :outBps)");
+                "(router_name, port_number, port_name, admin_status, oper_status, mac_address, in_bps, out_bps, status) "
+                "VALUES (:routerName, :portNumber, :portName, :adminStatus,"
+                  " :operStatus, :macAddress, :inBps, :outBps, :status)");
     query.bindValue(":routerName",  Router::routerPtr->routerName);
     query.bindValue(":portNumber",  port->ifIndex);
     query.bindValue(":portName",    port->portName);
@@ -228,6 +237,7 @@ void MainWindow::showPortInfo(Port* port) {
     query.bindValue(":macAddress",  port->macAddress);
     query.bindValue(":inBps",       port->trafficBuffer.last().InBPS);
     query.bindValue(":outBps",      port->trafficBuffer.last().OutBps);
+    query.bindValue(":status",      port->trafficBuffer.last().loadStatus);
 
     if(!query.exec()) qDebug() << "Insert Failed:" << query.lastError().text();
 }

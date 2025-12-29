@@ -1,6 +1,7 @@
 #ifndef ARPTABLEENTRY_H
 #define ARPTABLEENTRY_H
 #include <QString>
+
 class ArpTableEntry {
 public:
     int ifIndex = 0;

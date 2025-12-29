@@ -39,16 +39,16 @@ template <> constexpr inline auto MainWindow::qt_create_metaobjectdata<qt_meta_t
     namespace QMC = QtMocConstants;
     QtMocHelpers::StringRefStorage qt_stringData {
         "MainWindow",
-        "startMyThread",
+        "startThread",
         "",
         "showRouterInfo",
         "Router*",
         "routerInfo",
+        "showLoadInfo",
+        "showPortView",
         "showPortInfo",
         "Port*",
         "portInfo",
-        "showLoadInfo",
-        "showPortView",
         "getStatusText",
         "status",
         "text",
@@ -57,23 +57,23 @@ template <> constexpr inline auto MainWindow::qt_create_metaobjectdata<qt_meta_t
     };
 
     QtMocHelpers::UintData qt_methods {
-        // Slot 'startMyThread'
+        // Slot 'startThread'
         QtMocHelpers::SlotData<void()>(1, 2, QMC::AccessPublic, QMetaType::Void),
         // Slot 'showRouterInfo'
         QtMocHelpers::SlotData<void(Router *)>(3, 2, QMC::AccessPublic, QMetaType::Void, {{
             { 0x80000000 | 4, 5 },
         }}),
-        // Slot 'showPortInfo'
-        QtMocHelpers::SlotData<void(Port *)>(6, 2, QMC::AccessPublic, QMetaType::Void, {{
-            { 0x80000000 | 7, 8 },
-        }}),
         // Slot 'showLoadInfo'
-        QtMocHelpers::SlotData<void(Router *)>(9, 2, QMC::AccessPublic, QMetaType::Void, {{
+        QtMocHelpers::SlotData<void(Router *)>(6, 2, QMC::AccessPublic, QMetaType::Void, {{
             { 0x80000000 | 4, 5 },
         }}),
         // Slot 'showPortView'
-        QtMocHelpers::SlotData<void(Router *)>(10, 2, QMC::AccessPublic, QMetaType::Void, {{
+        QtMocHelpers::SlotData<void(Router *)>(7, 2, QMC::AccessPublic, QMetaType::Void, {{
             { 0x80000000 | 4, 5 },
+        }}),
+        // Slot 'showPortInfo'
+        QtMocHelpers::SlotData<void(Port *)>(8, 2, QMC::AccessPublic, QMetaType::Void, {{
+            { 0x80000000 | 9, 10 },
         }}),
         // Slot 'getStatusText'
         QtMocHelpers::SlotData<QString(int, QString)>(11, 2, QMC::AccessPublic, QMetaType::QString, {{
@@ -106,11 +106,11 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
     auto *_t = static_cast<MainWindow *>(_o);
     if (_c == QMetaObject::InvokeMetaMethod) {
         switch (_id) {
-        case 0: _t->startMyThread(); break;
+        case 0: _t->startThread(); break;
         case 1: _t->showRouterInfo((*reinterpret_cast<std::add_pointer_t<Router*>>(_a[1]))); break;
-        case 2: _t->showPortInfo((*reinterpret_cast<std::add_pointer_t<Port*>>(_a[1]))); break;
-        case 3: _t->showLoadInfo((*reinterpret_cast<std::add_pointer_t<Router*>>(_a[1]))); break;
-        case 4: _t->showPortView((*reinterpret_cast<std::add_pointer_t<Router*>>(_a[1]))); break;
+        case 2: _t->showLoadInfo((*reinterpret_cast<std::add_pointer_t<Router*>>(_a[1]))); break;
+        case 3: _t->showPortView((*reinterpret_cast<std::add_pointer_t<Router*>>(_a[1]))); break;
+        case 4: _t->showPortInfo((*reinterpret_cast<std::add_pointer_t<Port*>>(_a[1]))); break;
         case 5: { QString _r = _t->getStatusText((*reinterpret_cast<std::add_pointer_t<int>>(_a[1])),(*reinterpret_cast<std::add_pointer_t<QString>>(_a[2])));
             if (_a[0]) *reinterpret_cast<QString*>(_a[0]) = std::move(_r); }  break;
         case 6: { QString _r = _t->formatBps((*reinterpret_cast<std::add_pointer_t<double>>(_a[1])));

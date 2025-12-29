@@ -23,8 +23,8 @@ class MainWindow : public QMainWindow {
 
 private:
     RouterWorker* routerWorker = nullptr;
-    QThread* routerThread = nullptr;
     PortWorker* portWorker = nullptr;
+    QThread* routerThread = nullptr;
     QThread* portThread = nullptr;
     Ui::MainWindow *ui;
 
@@ -33,11 +33,11 @@ public:
     ~MainWindow();
 
 public slots:
-    void startMyThread();
+    void startThread();
     void showRouterInfo(Router* routerInfo);
-    void showPortInfo(Port* portInfo);   // 포트 정보 UI에 표시
     void showLoadInfo(Router* routerInfo);
     void showPortView(Router* routerInfo);
+    void showPortInfo(Port* portInfo);   // 포트 정보 UI에 표시
 
     QString getStatusText(int status, QString text);
     QString formatBps(double bps);
